@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://yamilalarconportfolio.netlify.app/sitemap.xml

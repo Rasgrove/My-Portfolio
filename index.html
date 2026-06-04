@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Yamil Alarcon | Full-Stack Developer & Software Engineer</title>
+
+  <!-- Primary Meta Tags (Palabras clave y Descripción rica) -->
+  <meta name="title" content="Yamil Alarcon | Full-Stack Developer & Software Engineer" />
+  <meta name="description"
+    content="Portafolio profesional de Yamil Alarcon, Ingeniero de Sistemas y Desarrollador Full-Stack especializado en PHP, JS, bases de datos y corporativas soluciones institucionales con IA." />
+  <meta name="keywords"
+    content="Yamil Alarcon, Yamil Alarcón Romero, desarrollador web, full-stack developer, ingeniero de sistemas, crear páginas web, software engineer, programador Bolivia, programador La Paz, PHP, JavaScript, Web Premium, CTO as a service, freelancer" />
+  <meta name="author" content="Yamil Alarcon Romero" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://yamilalarconportfolio.netlify.app/" />
+
+  <!-- Open Graph / LinkedIn (Vistas previas en redes) -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://yamilalarconportfolio.netlify.app/" />
+  <meta property="og:title" content="Yamil Alarcon | Full-Stack Developer" />
+  <meta property="og:description"
+    content="Desarrollador enfocado en soluciones web escalables, integración de IA y arquitecturas limpias de grado institucional." />
+  <meta property="og:image" content="https://yamilalarconportfolio.netlify.app/Images/Yamil%20Alarcon.png" />
+
+  <!-- JSON-LD SEO Schema (Resultados enriquecidos para Google) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Person",
+    "name": "Yamil Alarcon",
+    "url": "https://yamilalarconportfolio.netlify.app/",
+    "image": "https://yamilalarconportfolio.netlify.app/Images/Yamil%20Alarcon.png",
+    "sameAs": [
+      "https://www.linkedin.com/in/yamil-alarcon-romero-95560926a",
+      "https://github.com/yamilalarcon"
+    ],
+    "jobTitle": "Full-Stack Developer & Systems Engineer",
+    "description": "Profesional en Ingeniería de Sistemas enfocado en soluciones web eficientes y escalables."
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Lora:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <link rel="icon" type="image/png" href="Images/favicon.ico.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Header -->
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="#">Y.A.</a>
+      </div>
+      <ul class="nav-links">
+        <li>
+          <a href="#about" data-lang="es">Sobre Mí</a>
+          <a href="#about" data-lang="en" style="display:none;">About Me</a>
+        </li>
+        <li>
+          <a href="#skills" data-lang="es">Habilidades</a>
+          <a href="#skills" data-lang="en" style="display:none;">Skills</a>
+        </li>
+        <li>
+          <a href="#projects" data-lang="es">Proyectos</a>
+          <a href="#projects" data-lang="en" style="display:none;">Projects</a>
+        </li>
+        <li>
+          <a href="#availability" data-lang="es">Disponibilidad</a>
+          <a href="#availability" data-lang="en" style="display:none;">Availability</a>
+        </li>
+        <li>
+          <a href="#contact" data-lang="es">Contacto</a>
+          <a href="#contact" data-lang="en" style="display:none;">Contact</a>
+        </li>
+      </ul>
+      <div class="language-switcher">
+        <button class="lang-btn" data-lang="es" aria-label="Cambiar a Español">🇪🇸 ES</button>
+        <button class="lang-btn active" data-lang="en" aria-label="Switch to English">🇺🇸 EN</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <!-- Canvas WebGL/FX - se activará por JS (pieza técnica destacada) -->
+      <canvas id="hero-canvas" aria-hidden="true"
+        style="position:absolute; inset:0; width:100%; height:100%; pointer-events:none;"></canvas>
+
+      <div class="hero-content">
+        <div class="hero-text">
+          <h1 data-lang="es">Ingeniero Yamil Alarcon</h1>
+          <h1 data-lang="en" style="display:none;">Engineer Yamil Alarcon</h1>
+
+          <div class="hero-subtitle">
+            <span data-lang="es">AI-Assisted Full-Stack Developer</span>
+            <span data-lang="en" style="display:none;">AI-Assisted Full-Stack Developer</span>
+          </div>
+          <div class="hero-tagline">
+            <span data-lang="es">Sistemas institucionales · Automatización de procesos · Arquitectura web·
+              Documentación de sistema · Bases de Datos</span>
+            <span data-lang="en" style="display:none;">Institutional systems · Process automation · Web Architecture ·
+              Systems documentation · Databases</span>
+          </div>
+
+          <div id="dynamic-text-container">
+            <span id="dynamic-text"></span>
+          </div>
+
+          <div class="hero-stats">
+            <div class="stat-item">
+              <span class="counter" data-target="3">0</span>
+              <span data-lang="es">Proyectos en Producción</span>
+              <span data-lang="en" style="display:none;">Projects in Production</span>
+            </div>
+            <div class="stat-item">
+              <span class="counter" data-target="5">0</span>
+              <span data-lang="es">Tecnologías en Stack Principal</span>
+              <span data-lang="en" style="display:none;">Core Stack Technologies</span>
+            </div>
+            <div class="stat-item">
+              <span class="counter" data-target="1">0</span>
+              <span data-lang="es">Sistema Implementado y Activo</span>
+              <span data-lang="en" style="display:none;">Active and Implemented System</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Profil image commented out as per user request -->
+        <!-- 
+        <div class="hero-image">
+          <div class="image-container">
+            <img src="Images/Yamil Alarcon.png" alt="Foto de Yamil Alarcon" />
+            <div class="image-glow"></div>
+          </div>
+        </div>
+        -->
+
+        <!-- New 3D ASCII Animation Container -->
+        <div class="hero-ascii">
+          <div id="ascii-container" aria-label="3D ASCII Animation">
+            <pre id="ascii-pre"></pre>
+          </div>
+          <div class="ascii-glow"></div>
+        </div>
+      </div>
+
+      <!-- Tech badge scrolling strip -->
+      <div class="tech-strip" aria-hidden="true">
+        <div class="tech-strip-inner">
+          <span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap
+            Studio</span><span>HTML5</span><span>CSS3</span><span>Git</span><span>Laravel</span><span>UML</span><span>AI-Dev</span><span>REST
+            API</span><span>SQL</span><span>PHP</span><span>MySQL</span><span>JavaScript</span><span>Bootstrap
+            Studio</span><span>HTML5</span><span>CSS3</span><span>Git</span><span>Laravel</span><span>UML</span><span>AI-Dev</span><span>REST
+            API</span><span>SQL</span>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-indicator-line"></div>
+        <div class="scroll-indicator-dot"></div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="container">
+        <h2 class="section-title" data-lang="es">Sobre Mí</h2>
+        <h2 class="section-title" data-lang="en" style="display:none;">About Me</h2>
+
+        <div class="about-content">
+          <div class="about-text">
+            <p data-lang="es">
+              Ingeniero de Sistemas recién egresado con enfoque en desarrollo web full-stack y aplicaciones de IA. Ayudo
+              a empresas a
+              optimizar sus procesos internos mediante sistemas web a medida. Mi enfoque combina una sólida arquitectura
+              de software con el uso de IA para entregar soluciones robustas en la mitad del tiempo.. He
+              implementado con éxito
+              un Sistema Experto y plataforma de evaluación en línea, llevando un proyecto desde la planificación (UML,
+              XP) hasta su despliegue en producción y uso real por parte de una institución académica.
+            </p>
+            <p data-lang="en" style="display:none;">
+              Systems Engineer recently graduated focused on full-stack web development and AI applications. I help
+              companies optimize
+              their internal processes through custom web systems. My approach combines solid software architecture with
+              the use of AI to deliver robust solutions in half the time. I have successfully implemented an Expert
+              System and online evaluation platform, taking a project from planning (UML,
+              XP) to production deployment and real-world use by an academic institution.
+            </p>
+
+            <div class="focus-grid">
+              <div class="focus-card">
+                <div class="focus-card-header">
+                  <div class="focus-icon">💻</div>
+                  <h4 data-lang="es">Full-Stack &amp; Arquitectura</h4>
+                  <h4 data-lang="en" style="display:none;">Full-Stack &amp; Architecture</h4>
+                </div>
+                <p data-lang="es">Sistemas web de múltiple tipo (institucionales, páginas web, de inventario, de
+                  promoción de productos, con base de datos y funcionales) de principio a fin, desplegados en producción
+                  (PHP, Python, MySQL,
+                  JavaScript).</p>
+                <p data-lang="en" style="display:none;">Web systems of multiple types (institutional, web pages,
+                  inventory,
+                  product promotion, with database and functional) from end to end, deployed in production (PHP,
+                  Python, MySQL,
+                  JavaScript).</p>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card-header">
+                  <div class="focus-icon">🤖</div>
+                  <h4 data-lang="es">Desarrollo Asistido por IA</h4>
+                  <h4 data-lang="en" style="display:none;">AI-Assisted Development</h4>
+                </div>
+                <p data-lang="es">IDE's con IA, Prompt Engineering y herramientas usadas para ciclos de desarrollo
+                  ágiles y
+                  código
+                  de buen nivel y auditado.</p>
+                <p data-lang="en" style="display:none;">IDE's with AI, Prompt Engineering and tools used for agile
+                  development
+                  cycles and high quality and audited code.</p>
+              </div>
+
+              <div class="focus-card">
+                <div class="focus-card-header">
+                  <div class="focus-icon">🎯</div>
+                  <h4 data-lang="es">Visión de Negocio (Finanzas)</h4>
+                  <h4 data-lang="en" style="display:none;">Business Vision (Finance)</h4>
+                </div>
+                <p data-lang="es">Visión desde la economía/finanzas integrada al desarrollo con Extreme Programming,
+                  asegurando
+                  soluciones que aportan
+                  valor real para el mundo económico y financiero.</p>
+                <p data-lang="en" style="display:none;">Vision from economics/finance integrated with development with
+                  Extreme
+                  Programming, ensuring
+                  solutions that provide real value for the economic and financial world.</p>
+              </div>
+            </div>
+
+            <!-- Degree button -->
+            <div class="degree-btn-wrapper">
+              <button class="degree-btn" onclick="openDegreeModal()">
+                <span class="degree-btn-icon">📄</span>
+                <span data-lang="es">Ver Título Profesional</span>
+                <span data-lang="en" style="display:none;">View Professional Degree</span>
+              </button>
+            </div>
+
+            <!-- Degree Modal -->
+            <div id="degree-modal" class="degree-overlay" onclick="closeDegreeModal(event)">
+              <div class="degree-modal">
+                <button class="degree-modal-close" onclick="closeDegreeModal()" aria-label="Cerrar">&times;</button>
+                <h3 data-lang="es">📄 Título en Provisión Nacional</h3>
+                <h3 data-lang="en" style="display:none;">📄 National Degree Certificate</h3>
+                <p class="degree-subtitle" data-lang="es">Ingeniero de Sistemas — Universidad Real</p>
+                <p class="degree-subtitle" data-lang="en" style="display:none;">Systems Engineer — Universidad Real</p>
+
+                <div class="degree-pdf-container" style="text-align: center; padding: 2rem;">
+                  <div style="font-size: 4rem; margin-bottom: 1rem;">🎓</div>
+
+                  <div data-lang="es">
+                    <p style="margin-bottom: 1rem; color: #ccc;">Título en Provisión Nacional como INGENIERO DE SISTEMAS
+                      EN COMPUTACIÓN ADMINISTRATIVA, Universidad Real de la Cámara Nacional de Comercio. Me gradué con
+                      un
+                      promedio de 89/100, Nro: 153566. Con Libro Nro. 1
+                      Folio Nro. 69 Regitro 687</p>
+                    <p style="font-weight: bold; color: var(--primary-color);">Para verlo a detalle o solicitar copias,
+                      contáctame directamente.</p>
+                    <a href="https://wa.me/59165655661?text=Hola%20Yamil,%20quisiera%20solicitar%20la%20comprobaci%C3%B3n%20de%20tu%20t%C3%ADtulo%20profesional."
+                      target="_blank" rel="noopener" class="project-link"
+                      style="display: inline-block; margin-top: 1.5rem;">Solicitar Verificación ℹ️</a>
+                  </div>
+
+                  <div data-lang="en" style="display:none;">
+                    <p style="margin-bottom: 1rem; color: #ccc;">National Degree Certificate as SYSTEMS ENGINEER IN
+                      ADMINISTRATIVE COMPUTING, Universidad Real de la Cámara Nacional de Comercio. I graduated with an
+                      average of 89/100, No: 153566. With Book No. 1 Folio
+                      No. 69 Registry 687</p>
+                    <p style="font-weight: bold; color: var(--primary-color);">To view the details or request
+                      documents, please contact me directly.</p>
+                    <a href="https://wa.me/59165655661?text=Hello%20Yamil,%20I%20would%20like%20to%20request%20the%20verification%20of%20your%20professional%20degree."
+                      target="_blank" rel="noopener" class="project-link"
+                      style="display: inline-block; margin-top: 1.5rem;">Request Verification ℹ️</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+
+
+
+            <!-- English Certificate Button -->
+            <div class="degree-btn-wrapper">
+              <button class="degree-btn" onclick="openEnglishModal()">
+                <span class="degree-btn-icon">📄</span>
+                <span data-lang="es">Ver Nivel de Inglés</span>
+                <span data-lang="en" style="display:none;">View English level</span>
+              </button>
+            </div>
+
+            <!-- English Certificate Modal -->
+            <div id="english-modal" class="degree-overlay" onclick="closeEnglishModal(event)">
+              <div class="degree-modal">
+                <button class="degree-modal-close" onclick="closeEnglishModal()" aria-label="Cerrar">&times;</button>
+                <h3 data-lang="es">📄 Certificado de Inglés</h3>
+                <h3 data-lang="en" style="display:none;">📄 English Certificate</h3>
+                <p class="degree-subtitle" data-lang="es">Nivel C2 — EF SET; talking on a similar level to a native
+                  speaker</p>
+                <p class="degree-subtitle" data-lang="en" style="display:none;">C2 Level — EF SET; talking on a similar
+                  level to a native speaker</p>
+
+                <div class="english-pdf-container">
+                  <embed src="credentials/EF_SET_Certificate.pdf" type="application/pdf" width="100%" height="500px" />
+                  <div class="english-pdf-fallback" data-lang="es">
+                    <p>¿No puedes ver el PDF? <a href="credentials/EF_SET_Certificate.pdf" target="_blank">Descárgalo
+                        aquí para verlo</a>.</p>
+                  </div>
+                  <div class="english-pdf-fallback" data-lang="en" style="display:none;">
+                    <p>Cannot view the PDF? <a href="credentials/EF_SET_Certificate.pdf" target="_blank">Download
+                        it here to view it</a>.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills">
+      <div class="container">
+        <h2 class="section-title" data-lang="es">Habilidades Técnicas</h2>
+        <h2 class="section-title" data-lang="en" style="display:none;">Technical Skills</h2>
+
+        <div class="bento-grid">
+          <!-- Tecnologías -->
+          <div class="bento-card tech-stack">
+            <h4 data-lang="es">Tecnologías Core</h4>
+            <h4 data-lang="en" style="display:none;">Core Technologies</h4>
+            <div class="bento-tags expert">
+              <span>PHP</span><span>MySQL</span><span>HTML5</span><span>CSS3</span><span>JavaScript</span><span>Bootstrap</span>
+            </div>
+          </div>
+
+          <!-- Arquitectura -->
+          <div class="bento-card architecture">
+            <h4 data-lang="es">Arquitectura</h4>
+            <h4 data-lang="en" style="display:none;">Architecture</h4>
+            <p data-lang="es">Bases de datos (MySQL 3FN/4FN) · Modelado UML (Clases, ER) · Documentación técnica
+              exhaustiva.</p>
+            <p data-lang="en" style="display:none;">Databases (MySQL 3NF/4NF) · UML Modeling (Classes, ER) ·
+              Comprehensive technical documentation.</p>
+          </div>
+
+          <!-- AI Dev -->
+          <div class="bento-card ai-dev">
+            <h4 data-lang="es">Desarrollo Asistido por IA</h4>
+            <h4 data-lang="en" style="display:none;">AI-Assisted Development</h4>
+            <div class="bento-tags expert">
+              <span>Trae Studio</span><span>Antigravity</span><span>Prompt Engineering</span><span>Code Auditing</span>
+            </div>
+          </div>
+
+          <!-- Metodologías -->
+          <div class="bento-card methods">
+            <h4 data-lang="es">Metodologías</h4>
+            <h4 data-lang="en" style="display:none;">Methodologies</h4>
+            <p data-lang="es">Extreme Programming (XP) · Flujos ágiles · Entregas iterativas funcionales.</p>
+            <p data-lang="en" style="display:none;">Extreme Programming (XP) · Agile workflows · Iterative functional
+              deliveries.</p>
+          </div>
+
+          <!-- Complementario -->
+          <div class="bento-card complement"
+            style="border: 1px solid rgba(0, 255, 170, 0.3); box-shadow: 0 0 15px rgba(0,255,170,0.05);">
+            <h4 data-lang="es" style="color: var(--primary-color);">💼 Stack Complementario: Negocios</h4>
+            <h4 data-lang="en" style="display:none; color: var(--primary-color);">💼 Complementary Stack: Business</h4>
+            <p data-lang="es" style="font-size: 0.95rem;"><strong>Plus Invaluable:</strong> No solo escribo código,
+              entiendo la rentabilidad. Gracias a mi formación en <strong>Administración y Economía (UMSA)</strong>,
+              facilito de manera integral la adaptación web de tu pequeña o mediana empresa. Tengo la capacidad de
+              analizar tu negocio/actividad desde la economía y administración para una mejor adaptación.</p>
+            <p data-lang="en" style="display:none; font-size: 0.95rem;"><strong>Invaluable Plus:</strong> I don't just
+              write code, I understand profitability. Thanks to my background in <strong>Management & Economics
+                (UMSA)</strong>, I seamlessly facilitate your small or medium business web adaptation. I can analyze
+              your business/activity from an economic and administrative perspective for a better adaptation.</p>
+          </div>
+
+          <!-- Modelo de Inversión (SaaP) -->
+          <div class="bento-card web-services"
+            style="grid-column: 1 / -1; border-color: var(--primary-color); background: rgba(46, 111, 100, 0.05); display: flex; flex-direction: column; gap: 1rem;">
+            <div>
+              <h4 data-lang="es" style="color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.3rem;">🤝
+                Inversión Tecnológica Inteligente (SaaP)</h4>
+              <h4 data-lang="en"
+                style="display:none; color: var(--primary-color); margin-bottom: 0.5rem; font-size: 1.3rem;">🤝 Smart
+                Technological Investment (SaaP)</h4>
+              <p data-lang="es" style="font-size: 1rem; color: #fff; margin-bottom: 0.5rem;"><strong>Desarrollo de
+                  Páginas Web robustas sin el peso de la inversión inicial.</strong></p>
+              <p data-lang="en" style="display:none; font-size: 1rem; color: #fff; margin-bottom: 0.5rem;">
+                <strong>Development of robust Web Pages without the weight of initial investment.</strong>
+              </p>
+              <p data-lang="es" style="font-size: 0.95rem; color: #ccc;">Para presencia digital corporativa:
+                <strong>Páginas Web Premium desde $0 y $175/mes</strong> minimizando la barrera del costo y optimizando
+                el flujo de caja. <br><em style="color:#aaa; font-size:0.85rem;">*Nota: Para Sistemas Web Complejos
+                  (Sistemas Base de Datos, ERPs, tecnologías ajenas a web simples), las cotizaciones y requerimientos se
+                  modelan 100% a medida.</em>
+              </p>
+              <p data-lang="en" style="display:none; font-size: 0.95rem; color: #ccc;">For corporate digital presence:
+                <strong>Premium Web Pages from $0 & $175/mo</strong> minimizing cost barrier and optimizing cash flow.
+                <br><em style="color:#aaa; font-size:0.85rem;">*Note: For Complex Web Systems (Database Systems, ERPs,
+                  beyond simple web tech), pricing and reqs are 100% customly modeled.</em>
+              </p>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 1rem;">
+              <!-- Pilar 1 -->
+              <div
+                style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-color);">
+                <h5 data-lang="es" style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🤖 Desarrollo
+                  Acelerado con IA</h5>
+                <h5 data-lang="en" style="display:none; color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🤖
+                  Accelerated AI Development</h5>
+                <p data-lang="es" style="font-size: 0.85rem; color: #bbb;">Construcción hasta 3x más rápida garantizando
+                  lógica limpia y código optimizado mediante auditorías profundas de IA.</p>
+                <p data-lang="en" style="display:none; font-size: 0.85rem; color: #bbb;">Up to 3x faster construction
+                  guaranteeing clean logic and optimized code through deep AI audits.</p>
+              </div>
+              <!-- Pilar 2 -->
+              <div
+                style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-color);">
+                <h5 data-lang="es" style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🛡️ Infraestructura &
+                  Seguridad</h5>
+                <h5 data-lang="en" style="display:none; color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">🛡️
+                  Infrastructure & Security</h5>
+                <p data-lang="es" style="font-size: 0.85rem; color: #bbb;">Grado Institucional con blindaje contra
+                  inyecciones SQL/XSS y gestión de información sensible.</p>
+                <p data-lang="en" style="display:none; font-size: 0.85rem; color: #bbb;">Institutional Grade with
+                  shielding against SQL/XSS injections and sensitive data management.</p>
+              </div>
+              <!-- Pilar 3 -->
+              <div
+                style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-color);">
+                <h5 data-lang="es" style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">⚙️ Mantenimiento
+                  Evolutivo</h5>
+                <h5 data-lang="en" style="display:none; color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">⚙️
+                  Evolutionary Maintenance</h5>
+                <p data-lang="es" style="font-size: 0.85rem; color: #bbb;">Actualizaciones continuas. Tu software nunca
+                  queda obsoleto; evoluciona con tu negocio mensualmente.</p>
+                <p data-lang="en" style="display:none; font-size: 0.85rem; color: #bbb;">Continuous updates. Your
+                  software never becomes obsolete; it evolves with your business monthly.</p>
+              </div>
+              <!-- Pilar 4 -->
+              <div
+                style="background: rgba(255,255,255,0.03); padding: 1rem; border-radius: 8px; border-left: 3px solid var(--primary-color);">
+                <h5 data-lang="es" style="color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">📈 Plus de Negocios
+                </h5>
+                <h5 data-lang="en" style="display:none; color: #fff; margin-bottom: 0.5rem; font-size: 0.95rem;">📈
+                  Business Plus</h5>
+                <p data-lang="es" style="font-size: 0.85rem; color: #bbb;">Consultoría técnica excepcional al adaptar el
+                  negocio online gracias a mi base analítica de Economía.</p>
+                <p data-lang="en" style="display:none; font-size: 0.85rem; color: #bbb;">Exceptional technical
+                  consultancy when expanding online thanks to my Economic analytical ground.</p>
+              </div>
+            </div>
+            <p data-lang="es" style="font-size: 0.9rem; color: #aaa; margin-top: 0.5rem; font-style: italic;">$0
+              iniciales para que enfoques tu capital en crecer, mientras yo me encargo de que tu tecnología escale.</p>
+            <p data-lang="en"
+              style="display:none; font-size: 0.9rem; color: #aaa; margin-top: 0.5rem; font-style: italic;">$0 initial
+              fee so you can focus your capital on growing, while I make sure your technology scales.</p>
+          </div>
+        </div>
+
+        <div class="skills-extra-btn-wrapper">
+          <button class="extra-skills-btn" onclick="openAdditionalSkillsModal()">
+            <span>🔍</span>
+            <span data-lang="es">Habilidades Adicionales</span>
+            <span data-lang="en" style="display:none;">Additional Skills</span>
+          </button>
+        </div>
+
+        <!-- Modal Habilidades Adicionales -->
+        <div id="additional-skills-modal" class="add-skills-overlay" onclick="closeAdditionalSkillsModal(event)">
+          <div class="add-skills-modal">
+            <button class="add-skills-close" onclick="closeAdditionalSkillsModal()" aria-label="Cerrar">&times;</button>
+            <h3 data-lang="es">🔍 Habilidades Adicionales</h3>
+            <h3 data-lang="en" style="display:none;">🔍 Additional Skills</h3>
+            <p class="add-skills-subtitle" data-lang="es">Competencias complementarias que enriquecen mi perfil
+              profesional</p>
+            <p class="add-skills-subtitle" data-lang="en" style="display:none;">Complementary competencies that enrich
+              my professional profile</p>
+            <div class="add-skills-grid">
+              <div class="add-skill-card">
+                <div class="add-skill-icon">🌐</div>
+                <h4 data-lang="es">Idiomas</h4>
+                <h4 data-lang="en" style="display:none;">Languages</h4>
+                <p data-lang="es">Inglés (Avanzado/Fluido) — capaz de leer documentación técnica, participar en
+                  reuniones y comunicarse efectivamente en entornos internacionales.</p>
+                <p data-lang="en" style="display:none;">English (Advanced/Fluent) — able to read technical
+                  documentation, participate in meetings and communicate effectively in international environments.</p>
+                <span class="skill-level level-advanced" data-lang="es">Avanzado</span>
+                <span class="skill-level level-advanced" data-lang="en" style="display:none;">Advanced</span>
+              </div>
+              <div class="add-skill-card">
+                <div class="add-skill-icon">📈</div>
+                <h4 data-lang="es">Visión Económica</h4>
+                <h4 data-lang="en" style="display:none;">Economic Vision</h4>
+                <p data-lang="es">Estudiante de Economía (UMSA) — aportando una capa analítica extra al desarrollo,
+                  permitiendo entender mejor los modelos y necesidades de negocio.</p>
+                <p data-lang="en" style="display:none;">Economics Student (UMSA) — bringing an extra analytical layer to
+                  development, allowing a better understanding of business models and needs.</p>
+                <span class="skill-level level-beginner" data-lang="es">Complementario</span>
+                <span class="skill-level level-beginner" data-lang="en" style="display:none;">Complementary</span>
+              </div>
+              <div class="add-skill-card">
+                <div class="add-skill-icon">🎖️</div>
+                <h4 data-lang="es">Certificaciones y Logros</h4>
+                <h4 data-lang="en" style="display:none;">Certifications & Achievements</h4>
+                <p data-lang="es">Múltiples reconocimientos incluyendo <b>Excel Avanzado</b>, <b>Oratoria Moderna</b>
+                  (INFOCAL) y excelencia académica (Top 5 en EXPOECO).</p>
+                <p data-lang="en" style="display:none;">Multiple recognitions including <b>Advanced Excel</b>, <b>Modern
+                    Oratory</b> (INFOCAL) and academic excellence (Top 5 in EXPOECO).</p>
+                <span class="skill-level level-intermediate" data-lang="es">Reconocido</span>
+                <span class="skill-level level-intermediate" data-lang="en" style="display:none;">Recognized</span>
+              </div>
+              <div class="add-skill-card">
+                <div class="add-skill-icon">🛠️</div>
+                <h4 data-lang="es">Herramientas de Trabajo</h4>
+                <h4 data-lang="en" style="display:none;">Work Tools</h4>
+                <p data-lang="es">Manejo avanzado de la suite <b>Microsoft Office</b> (Word, Excel, PowerPoint) y buen
+                  dominio de software de streaming <b>OBS Studio</b> para demostraciones.</p>
+                <p data-lang="en" style="display:none;">Advanced use of <b>Microsoft Office</b> suite (Word, Excel,
+                  PowerPoint) and solid mastery of streaming software <b>OBS Studio</b> for demos.</p>
+                <span class="skill-level level-advanced" data-lang="es">Avanzado</span>
+                <span class="skill-level level-advanced" data-lang="en" style="display:none;">Advanced</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects">
+      <div class="container">
+        <h2 class="section-title" data-lang="es">Proyectos Destacados</h2>
+        <h2 class="section-title" data-lang="en" style="display:none;">Featured Projects</h2>
+
+        <div class="project-grid">
+          <!-- Rellenado dinámicamente por script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Availability -->
+    <section id="availability">
+      <div class="container">
+        <h2 class="section-title" data-lang="es">Disponibilidad</h2>
+        <h2 class="section-title" data-lang="en" style="display:none;">Availability</h2>
+        <p class="availability-subtitle" data-lang="es">Horario de atención — Hora Bolivia (UTC−4)</p>
+        <p class="availability-subtitle" data-lang="en" style="display:none;">Working hours — Bolivia Time (UTC−4)</p>
+        <div class="availability-grid" id="availability-grid">
+          <!-- Rendered by script.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="container">
+        <h2 class="section-title" data-lang="es">Conectemos</h2>
+        <h2 class="section-title" data-lang="en" style="display:none;">Let's Connect</h2>
+
+        <div class="contact-content">
+          <div class="contact-info">
+            <div class="contact-intro reveal">
+              <h3 data-lang="es">Desarrollemos Tu Idea</h3>
+              <h3 data-lang="en" style="display: none;">Let's Build Your Idea</h3>
+              <p data-lang="es" style="margin-bottom: 1.5rem;">Si buscas un desarrollador que entienda tanto la
+                tecnología como tu negocio, contáctame. Podemos agendar una llamada de 15 minutos para aterrizar ideas,
+                discutir tu proyecto y estructurar un presupuesto inicial de forma transparente.</p>
+              <p data-lang="en" style="display: none; margin-bottom: 1.5rem;">If you are looking for a developer who
+                understands both technology and your business, contact me. We can schedule a 15-minute call to bring
+                ideas to the ground, discuss your project and structure a transparent initial budget.</p>
+
+              <div style="display:flex; gap:1rem; flex-wrap:wrap; margin-bottom: 1rem;">
+                <a href="https://www.linkedin.com/in/yamil-alarcon-romero-95560926a" target="_blank" rel="noopener"
+                  class="whatsapp-btn"
+                  style="background: rgba(10, 102, 194, 0.15); border-color: #0a66c2; color: #0a66c2;">
+                  🔗 LinkedIn
+                </a>
+                <a href="https://github.com/yamilalarcon" target="_blank" rel="noopener" class="whatsapp-btn"
+                  style="background: rgba(255, 255, 255, 0.1); border-color: #fff; color: #fff;">
+                  💻 GitHub
+                </a>
+              </div>
+            </div>
+
+            <div class="contact-methods">
+              <div class="contact-method">
+                <div class="method-icon">📧</div>
+                <div class="method-info">
+                  <h4>Email</h4>
+                  <a href="mailto:elyamilalarcon.111@gmail.com">elyamilalarcon.111@gmail.com</a>
+                </div>
+              </div>
+
+              <div class="contact-method whatsapp-method">
+                <div class="method-icon">💬</div>
+                <div class="method-info">
+                  <h4>WhatsApp</h4>
+                  <a href="https://wa.me/59165655661?text=Hola%20Yamil,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20o%20agendar%20una%20entrevista."
+                    target="_blank" rel="noopener">+591 65655661</a>
+                </div>
+              </div>
+
+              <div class="contact-method">
+                <div class="method-icon">📍</div>
+                <div class="method-info">
+                  <h4 data-lang="es">Ubicación</h4>
+                  <h4 data-lang="en" style="display:none;">Location</h4>
+                  <p data-lang="es">La Paz, Bolivia · Disponible para trabajo remoto internacional</p>
+                  <p data-lang="en" style="display:none;">La Paz, Bolivia · Available for international remote work</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="contact-form-container">
+            <form id="contact-form" class="contact-form" name="contact" method="POST" action="/" data-netlify="true"
+              data-netlify-honeypot="bot-field" novalidate>
+              <input type="hidden" name="form-name" value="contact" />
+              <p style="display: none;">
+                <label>No llenes esto si eres humano: <input name="bot-field" /></label>
+              </p>
+              <div class="form-group">
+                <input type="text" name="name" id="contact-name" placeholder="Tu nombre" required />
+                <span class="form-bar"></span>
+              </div>
+              <div class="form-group">
+                <input type="email" name="email" id="contact-email" placeholder="Tu correo electrónico" required />
+                <span class="form-bar"></span>
+              </div>
+              <div class="form-group">
+                <textarea name="message" id="contact-message" rows="5" placeholder="Tu mensaje" required></textarea>
+                <span class="form-bar"></span>
+              </div>
+              <button type="submit" class="submit-btn">
+                <span id="submit-text">Enviar Mensaje</span>
+                <div class="btn-ripple"></div>
+              </button>
+            </form>
+            <div class="whatsapp-form-link" style="display:flex; flex-direction:column; gap:1rem; align-items:center;">
+              <div>
+                <span data-lang="es">¿Prefieres escribir directo?</span>
+                <span data-lang="en" style="display:none;">Prefer to write directly?</span>
+              </div>
+              <div style="display:flex; gap:1rem; flex-wrap:wrap; justify-content:center;">
+                <a id="whatsapp-direct-link"
+                  href="https://wa.me/59165655661?text=Hola%20Yamil,%20me%20gustar%C3%ADa%20hacer%20una%20consulta%20o%20agendar%20una%20entrevista."
+                  target="_blank" rel="noopener" class="whatsapp-btn">
+                  💬 WhatsApp
+                </a>
+                <a id="gmail-direct-link"
+                  href="https://mail.google.com/mail/?view=cm&fs=1&to=elyamilalarcon.111@gmail.com&su=Consulta%20o%20Entrevista"
+                  target="_blank" rel="noopener" class="whatsapp-btn"
+                  style="background: rgba(234, 67, 53, 0.15); border-color: #ea4335; color: #ea4335;">
+                  📧 Gmail
+                </a>
+              </div>
+            </div>
+            <!-- Nota: El envío por backend PHP es opcional. El JS maneja notificación/fallback. -->
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer style="padding:2rem; text-align:center; color:#aaa;">
+    <small>© <span id="year"></span> Yamil Alarcon</small>
+  </footer>
+
+  <button id="back-to-top" class="back-to-top" aria-label="Subir al inicio">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <script>
+    // Año en footer sin depender del archivo principal
+    document.addEventListener('DOMContentLoaded', function () {
+      var y = document.getElementById('year');
+      if (y) y.textContent = new Date().getFullYear();
+    });
+  </script>
+  <script src="js/ascii_animation.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
