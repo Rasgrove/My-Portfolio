@@ -42,112 +42,110 @@ const labels = {
 const projects = {
     es: [
         {
-            title: "Sistema de Orientación Vocacional y Pruebas de Aptitud (⭐)",
-            description: "Plataforma web diseñada, desarrollada e implementada para la Universidad Real. Combina evaluación vocacional con gestión de pruebas de aptitud. Reemplazó un proceso 100% manual.",
+            title: "Sistema de Orientación Vocacional y Pruebas (⭐)",
+            description: "Plataforma web implementada para la Universidad Real. Reemplazó un proceso 100% manual. Disponible en GitHub y mostrable localmente.",
             image: "project1.jpg",
             tech: ["PHP", "MySQL", "JavaScript", "Bootstrap", "HTML5", "CSS3"],
-            liveUrl: "https://test.ureal.academia.bo/",
-            details: "Sistema completo desarrollado bajo arquitectura cliente-servidor con metodología XP:\n\n• Documentación UML completa\n• Base de datos normalizada (3FN/4FN)\n• Evaluación vocacional asistida por IA simbólica\n• Panel administrativo para gestión de pruebas\n\nImpacto: Herramienta operativa clave para la captación estudiantil de la universidad.",
+            githubUrl: "https://github.com/Rasgrove/Vocational-Orientation-and-Test-System-for-UREAL---Bolivia-",
+            details: "Sistema completo desarrollado bajo arquitectura cliente-servidor con metodología XP:\n\n• Documentación UML completa\n• Base de datos normalizada (3FN/4FN)\n• Evaluación vocacional asistida por IA simbólica\n• Panel administrativo para gestión de pruebas\n\nImpacto: Herramienta operativa clave para la captación estudiantil. Nota: El sistema puede ser demostrado en entorno local previa solicitud.",
             caseStudy: `
                 <div style="text-align:left; color:#ccc; line-height:1.6; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
                     <h3 style="color:var(--primary-color); margin-bottom:1rem;">Transformación Digital del Proceso de Orientación y Admisión Universitaria</h3>
                     
                     <h4 style="color:#fff; margin-bottom:0.5rem;">El Problema: Ineficiencia y Deserción Académica</h4>
-                    <p style="margin-bottom:1rem;">La Universidad Real enfrentaba un proceso de captación basado en métodos manuales (formularios de Google), proyectando poca profesionalidad y resultando en datos propensos a errores. Esto provocaba elecciones académicas mal informadas, culminando en problemas críticos como deserción y cambios de carrera (8 casos solo en 2023).</p>
+                    <p style="margin-bottom:1rem;">La Universidad Real enfrentaba un proceso de captación basado en métodos manuales, proyectando poca profesionalidad y resultando en datos propensos a errores.</p>
                     
                     <h4 style="color:#fff; margin-bottom:0.5rem;">La Solución: Ecosistema Web Integral con IA Simbólica</h4>
-                    <p style="margin-bottom:1rem;">Diseñé e implementé una solución Fullstack única que integra dos pilares:<br>
-                    <strong>1. Sistema Experto de Orientación:</strong> Motor de inferencia (metodología RIASEC) que actúa como orientador virtual, brindando recomendaciones con base científica.<br>
-                    <strong>2. Sistema Web de Pruebas (PAD):</strong> Plataforma robusta para evaluaciones automáticas y visualización en tiempo real para admisiones.</p>
+                    <p style="margin-bottom:1rem;">Diseñé e implementé una solución Fullstack única que integra un Sistema Experto de Orientación y una plataforma robusta para evaluaciones automáticas.</p>
                     
-                    <h4 style="color:#fff; margin-bottom:0.5rem;">El Proceso: Agilidad, Seguridad y Stack Moderno</h4>
-                    <p style="margin-bottom:1rem;">Desarrollo bajo metodología <strong>Extreme Programming (XP)</strong> en 6 meses.<br>
-                    <strong>Stack:</strong> PHP, MySQL, HTML5, CSS3, JavaScript. Arquitectura OPA (One Page App) con Fetch API nativo.<br>
-                    <strong>Desafíos Superados:</strong> Blindaje SQL y hashing de contraseñas, aleatorización anti-fraudes, Sistema de roles RBAC estricto.</p>
-
                     <h4 style="color:#fff; margin-bottom:0.5rem;">El Impacto: Inteligencia Operativa</h4>
-                    <p style="margin-bottom:1rem;"><strong>Automatización Total:</strong> Procesamiento exitoso de los primeros 45 estudiantes para la gestión 2025, automatizando becas.<br>
-                    <strong>Calidad ISO/IEC 9126:</strong> Usabilidad (80%) y portabilidad (88.8%) garantizando experiencia óptima.<br>
-                    <strong>Valor Institucional:</strong> Captación estudiantil más estratégica, mejorando la competitividad mercantil de la universidad.</p>
+                    <p style="margin-bottom:1rem;"><strong>Automatización Total:</strong> Procesamiento exitoso de estudiantes, mejorando la competitividad mercantil de la universidad.</p>
                 </div>
             `,
             testimonial: {
-                quote: "El sistema desarrollado por Yamil cumplió con nuestras expectativas técnicas. Logramos reemplazar un proceso completamente manual por una plataforma funcional, estable y fácil de administrar. Supo entender el contexto institucional y traducirlo en soluciones concretas.",
+                quote: "El sistema desarrollado por Yamil cumplió con nuestras expectativas técnicas. Logramos reemplazar un proceso completamente manual por una plataforma funcional, estable y fácil de administrar.",
                 name: "Ing. Franco Céspedes",
                 role: "Jefe de TIC's — Universidad Real · Cámara Nacional de Comercio",
                 linkedin: "https://www.linkedin.com/in/franco-cespedes-19062ba9/"
             }
         },
         {
+            title: "AniStore - E-commerce Anime",
+            description: "Tienda online de alto rendimiento enfocada en el nicho de anime. Migrada a React para máxima velocidad y escalabilidad.",
+            image: "anistore.jpg",
+            tech: ["React", "Vite", "JavaScript", "HTML5", "CSS3"],
+            liveUrl: "https://animestoreexmplya.netlify.app/#productos",
+            details: "E-commerce especializado desarrollado con un enfoque en Performance y SEO:\n\n• Migración de arquitectura Sheets-dependent a datos locales optimizados.\n• Interfaz dinámica con animaciones fluidas y diseño orientado a conversión.\n• Catálogo gestionable y optimizado para carga ultra-rápida."
+        },
+        {
+            title: "Instrum - La Paz (Premium Music Store)",
+            description: "Plataforma Jamstack de lujo para una tienda de instrumentos musicales. Integra Decap CMS para gestión autónoma.",
+            image: "instrum.jpg",
+            tech: ["React", "Framer Motion", "Decap CMS", "Vite", "Vanilla CSS"],
+            liveUrl: "https://instrumlapaz.netlify.app/",
+            details: "Solución Jamstack de grado premium para el sector retail musical:\n\n• Diseño relax y orgánico (Paleta Jade/Beige).\n• Gestión de contenidos mediante Decap CMS (antes Netlify CMS).\n• Animaciones avanzadas con Framer Motion y optimización SEO agresiva."
+        },
+        {
             title: "Portafolio Profesional",
             description: "Sitio personal con enfoque en presentación de capacidades técnicas y conversión. Diseño responsive premium, barra de progreso Scroll y animaciones Reveal Observer.",
             image: "project2.jpg",
             tech: ["HTML5", "CSS3", "JavaScript", "AJAX", "Netlify"],
-            githubUrl: "https://github.com/yamilalarcon/portafolio-web",
-            details: "El portafolio que estás viendo ahora mismo es mi carta de presentación interactiva:\n\n• Interfaz 'Reveal on Scroll' y animaciones CSS3/JS avanzadas (Glassmorphism).\n• Motor 3D ASCII hecho sin librerías pesadas para ilustrar computación creativa.\n• Sistema de Contacto Híbrido (AJAX asíncrono con Fallback Modal UI a WhatsApp/Gmail).\n• Arquitectura responsive adaptativa para cualquier dispositivo."
-        },
-        {
-            title: "Proyectos Académicos",
-            description: "Sistemas de gestión y aplicaciones de base de datos desarrollados durante la carrera universitaria, demostrando capacidad de análisis e implementación.",
-            image: "project3.jpg",
-            tech: ["Java", "MySQL", "PHP", "JavaScript"],
-            githubUrl: "https://github.com/yamilalarcon/academic-projects",
-            details: "A lo largo de mi formación, he consolidado la lógica de programación y la integración de arquitecturas limpias:\n\n• Desarrollo de software de escritorio con Java (Inventarios, Facturación).\n• Análisis y diseño de Bases de Datos Relacionales complejas con MySQL.\n• Herramientas web experimentales aplicando patrones de diseño MVC."
+            githubUrl: "https://github.com/Rasgrove",
+            details: "El portafolio que estás viendo ahora mismo es mi carta de presentación interactiva:\n\n• Interfaz 'Reveal on Scroll' y animaciones CSS3/JS avanzadas.\n• Motor 3D ASCII hecho sin librerías pesadas.\n• Arquitectura responsive adaptativa para cualquier dispositivo."
         }
     ],
     en: [
         {
-            title: "Vocational Guidance and Aptitude Tests System (⭐)",
-            description: "Web platform designed, developed and implemented for Universidad Real. Combines vocational evaluation with aptitude test management. Replaced a 100% manual process.",
+            title: "Vocational Guidance and Testing System (⭐)",
+            description: "Web platform implemented for Universidad Real. Replaced a 100% manual process. Available on GitHub and can be shown locally.",
             image: "project1.jpg",
             tech: ["PHP", "MySQL", "JavaScript", "Bootstrap", "HTML5", "CSS3"],
-            liveUrl: "https://test.ureal.academia.bo/",
-            details: "Complete system developed under client-server architecture with XP methodology:\n\n• Full UML documentation (class, ER, component diagrams)\n• Normalized database (3NF/4NF)\n• Symbolic AI Assisted Vocational Evaluation\n• Complete administrative test panel\n\nImpact: Operational key tool for student enrollment.",
+            githubUrl: "https://github.com/Rasgrove/Vocational-Orientation-and-Test-System-for-UREAL---Bolivia-",
+            details: "Complete system developed under client-server architecture with XP methodology:\n\n• Full UML documentation\n• Normalized database (3NF/4NF)\n• Symbolic AI Assisted Vocational Evaluation\n• Administrative test management panel\n\nImpact: Operational key tool for student recruitment. Note: System can be demonstrated locally upon request.",
             caseStudy: `
                 <div style="text-align:left; color:#ccc; line-height:1.6; margin-top:2rem; border-top:1px solid rgba(255,255,255,0.1); padding-top:1.5rem;">
                     <h3 style="color:var(--primary-color); margin-bottom:1rem;">Digital Transformation of the Vocational Guidance and Admissions Process</h3>
                     
                     <h4 style="color:#fff; margin-bottom:0.5rem;">The Problem: Inefficiency and Academic Dropout</h4>
-                    <p style="margin-bottom:1rem;">Universidad Real faced a recruitment process based on manual methods, projecting unprofessionalism and resulting in error-prone data. This led to poorly informed academic choices, culminating in critical issues such as dropout and career changes.</p>
+                    <p style="margin-bottom:1rem;">Universidad Real faced a recruitment process based on manual methods, projecting unprofessionalism and resulting in error-prone data.</p>
                     
                     <h4 style="color:#fff; margin-bottom:0.5rem;">The Solution: Integral Web Ecosystem with Symbolic AI</h4>
-                    <p style="margin-bottom:1rem;">I designed and implemented a unique Fullstack solution integrating two pillars:<br>
-                    <strong>1. Expert Guidance System:</strong> Inference engine acting as a virtual counselor.<br>
-                    <strong>2. Web Testing System (PAD):</strong> Robust platform for automatic assessments and real-time visualization.</p>
+                    <p style="margin-bottom:1rem;">I designed and implemented a unique Fullstack solution integrating an Expert Guidance System and a robust testing platform.</p>
                     
-                    <h4 style="color:#fff; margin-bottom:0.5rem;">The Process: Agility, Security and Modern Stack</h4>
-                    <p style="margin-bottom:1rem;">Developed under <strong>Extreme Programming (XP)</strong> in 6 months.<br>
-                    <strong>Stack:</strong> PHP, MySQL, HTML5, CSS3, JavaScript. OPA Architecture with native Fetch API.<br>
-                    <strong>Technical Challenges:</strong> SQL shielding, password hashing, fraud-prevention randomization, strict RBAC system.</p>
-
                     <h4 style="color:#fff; margin-bottom:0.5rem;">The Impact: Operational Intelligence</h4>
-                    <p style="margin-bottom:1rem;"><strong>Total Automation:</strong> Successful processing of students for the 2025 management, automating scholarships.<br>
-                    <strong>Quality ISO/IEC 9126:</strong> Usability (80%) and portability (88.8%) guaranteeing optimal experience.<br>
-                    <strong>Institutional Value:</strong> More strategic student recruitment, improving the educational market competitiveness.</p>
+                    <p style="margin-bottom:1rem;"><strong>Total Automation:</strong> Successful student processing, improving educational market competitiveness.</p>
                 </div>
             `,
             testimonial: {
-                quote: "The system developed by Yamil accomplished our technical expectations. We successfully replaced a fully manual process with a functional, stable, and easy-to-manage platform. He demonstrated ability to understand our institutional context and translate it into concrete solutions.",
+                quote: "The system developed by Yamil accomplished our technical expectations. We successfully replaced a fully manual process with a functional, stable, and easy-to-manage platform.",
                 name: "Eng. Franco Céspedes",
                 role: "Head of IT — Universidad Real · National Chamber of Commerce",
                 linkedin: "https://www.linkedin.com/in/franco-cespedes-19062ba9/"
             }
         },
         {
+            title: "AniStore - Anime E-commerce",
+            description: "High-performance online store focused on the anime niche. Migrated to React for maximum speed and scalability.",
+            image: "anistore.jpg",
+            tech: ["React", "Vite", "JavaScript", "HTML5", "CSS3"],
+            liveUrl: "https://animestoreexmplya.netlify.app/#productos",
+            details: "Specialized e-commerce developed with focus on Performance and SEO:\n\n• Migration from Sheets-dependent architecture to optimized local data.\n• Dynamic UI with fluid animations and conversion-oriented design.\n• Optimized catalog with ultra-fast loading."
+        },
+        {
+            title: "Instrum - La Paz (Premium Music Store)",
+            description: "Premium Jamstack platform for a musical instruments store. Integrates Decap CMS for autonomous management.",
+            image: "instrum.jpg",
+            tech: ["React", "Framer Motion", "Decap CMS", "Vite", "Vanilla CSS"],
+            liveUrl: "https://instrumlapaz.netlify.app/",
+            details: "Premium grade Jamstack solution for the musical retail sector:\n\n• Relaxed and organic design (Jade/Beige palette).\n• Content management via Decap CMS.\n• Advanced animations with Framer Motion and aggressive SEO optimization."
+        },
+        {
             title: "Professional Portfolio",
             description: "Personal site focused on showcasing technical capabilities and conversion. Premium responsive design, Scroll progress bar and Reveal Observer animations.",
             image: "project2.jpg",
             tech: ["HTML5", "CSS3", "JavaScript", "AJAX", "Netlify"],
-            githubUrl: "https://github.com/yamilalarcon/portafolio-web",
-            details: "The portfolio you are viewing right now is my interactive presentation letter:\n\n• 'Reveal on Scroll' UI and advanced CSS3/JS animations (Glassmorphism).\n• 3D ASCII engine made without heavy libraries to illustrate creative computing.\n• Hybrid Contact System (Asynchronous AJAX with Fallback Modal UI to WhatsApp/Gmail).\n• Adaptive responsive architecture for any device."
-        },
-        {
-            title: "Academic Projects",
-            description: "Management systems and database applications developed during university, demonstrating analysis and implementation capabilities.",
-            image: "project3.jpg",
-            tech: ["Java", "MySQL", "PHP", "JavaScript"],
-            githubUrl: "https://github.com/yamilalarcon/academic-projects",
-            details: "Throughout my education, I have consolidated programming logic and clean architecture integration:\n\n• Desktop software development with Java (Inventories, Billing).\n• Analysis and design of complex Relational Databases with MySQL.\n• Experimental web tools applying MVC design patterns."
+            githubUrl: "https://github.com/Rasgrove",
+            details: "The portfolio you are viewing right now is my interactive presentation letter:\n\n• 'Reveal on Scroll' UI and advanced CSS3/JS animations.\n• 3D ASCII engine made without heavy libraries.\n• Adaptive responsive architecture for any device."
         }
     ]
 };
@@ -260,6 +258,7 @@ function initializeHeroCanvas() {
     ];
 
     function resize() {
+        if (!hero) return;
         const rect = hero.getBoundingClientRect();
         w = rect.width;
         h = rect.height;
@@ -402,17 +401,19 @@ function initializeTypingEffect() {
     typeText();
 }
 
-// Animaciones de scroll
+// Animaciones de scroll (Global observer for persistence)
+let scrollObserver;
+
 function initializeScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
         rootMargin: '0px 0px -50px 0px'
     };
 
-    const observer = new IntersectionObserver((entries) => {
+    scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
+                entry.target.classList.add('active');
             }
         });
     }, observerOptions);
@@ -421,7 +422,7 @@ function initializeScrollAnimations() {
     const animatedElements = document.querySelectorAll('.skill-category, .project-card, .achievement-item, .contact-method');
     animatedElements.forEach(el => {
         el.classList.add('fade-in');
-        observer.observe(el);
+        scrollObserver.observe(el);
     });
 }
 
@@ -682,6 +683,13 @@ function updateProjects() {
             </div>
         </div>
     `).join('');
+
+    // Re-observar nuevos elementos creados
+    if (scrollObserver) {
+        document.querySelectorAll('.project-card.reveal').forEach(el => {
+            scrollObserver.observe(el);
+        });
+    }
 }
 
 // Modal de proyectos
