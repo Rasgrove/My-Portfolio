@@ -1,0 +1,272 @@
+@import "tailwindcss";
+
+/* ============================================================
+   EDITORIAL DESIGN SYSTEM
+   Paleta restringida: calido-oscuro + lima quirurgico
+   Sin cards. Sin gradientes IA. Sin borders redondeados.
+   ============================================================ */
+
+:root {
+  /* ---- Backgrounds ---- */
+  --ink:      #0c0b09;          /* casi-negro calido, no azul */
+  --ink-2:    #161411;
+  --paper:    #f2ede6;          /* crema calida */
+  --paper-2:  #e8e0d5;
+
+  /* ---- Texto ---- */
+  --fg:       #f2ede6;
+  --fg-dim:   rgba(242,237,230,0.5);
+  --fg-dark:  #0c0b09;
+
+  /* ---- Accent: solo uno, quirurgico ---- */
+  --lime:     #d6f449;          /* lima agresivo, solo para toques */
+  --lime-dim: rgba(214,244,73,0.08);
+
+  /* ---- Tipografia — next/font inyecta var(--font-mono-loaded) y var(--font-text-loaded) en <html> ---- */
+  --font-display: 'Unbounded', sans-serif;
+  --font-text:    var(--font-text-loaded, 'Plus Jakarta Sans', system-ui, sans-serif);
+  --font-mono:    var(--font-mono-loaded, 'JetBrains Mono', 'Courier New', monospace);
+
+  /* ---- Spacing editorial ---- */
+  --gutter: clamp(1.25rem, 4vw, 3rem);
+}
+
+/* ============================================================
+   RESET
+   ============================================================ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background: var(--ink);
+}
+
+body {
+  background: var(--ink);
+  color: var(--fg);
+  font-family: var(--font-text), system-ui, sans-serif;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+::-webkit-scrollbar { width: 3px; }
+::-webkit-scrollbar-track { background: var(--ink); }
+::-webkit-scrollbar-thumb { background: var(--lime); }
+
+::selection {
+  background: var(--lime);
+  color: var(--ink);
+}
+
+:focus-visible {
+  outline: 1.5px solid var(--lime);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   SKIP LINK
+   ============================================================ */
+.skip-link {
+  position: absolute;
+  top: -999px;
+  left: 0;
+  background: var(--lime);
+  color: var(--ink);
+  padding: 0.5rem 1rem;
+  font-weight: 700;
+  z-index: 9999;
+}
+.skip-link:focus { top: 0; }
+
+/* ============================================================
+   CURSOR CUSTOM (solo pointer device)
+   ============================================================ */
+@media (pointer: fine) {
+  html { cursor: none; }
+}
+
+/* ============================================================
+   TOPBAR
+   ============================================================ */
+.topbar {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 200;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--gutter);
+  mix-blend-mode: difference;   /* invierte colores segun fondo */
+}
+
+/* ============================================================
+   UTILIDADES LAYOUT
+   ============================================================ */
+.full-bleed {
+  width: 100vw;
+  margin-left: calc(-1 * var(--gutter));
+}
+
+.section-pad {
+  padding: clamp(5rem, 12vw, 10rem) var(--gutter);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ============================================================
+   TIPOGRAFIA EDITORIAL
+   ============================================================ */
+
+/* Seccion labels — monoespacio arriba */
+.kicker {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--lime);
+  display: block;
+  margin-bottom: 1.5rem;
+}
+
+/* Titulos de seccion grandes */
+.section-title {
+  font-family: var(--font-display);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+}
+
+/* Texto editorial corrido */
+.body-text {
+  font-family: var(--font-text);
+  font-size: clamp(0.9rem, 1.1vw, 1rem);
+  color: var(--fg-dim);
+  line-height: 1.75;
+  max-width: 52ch;
+}
+
+/* ============================================================
+   DIVIDERS EDITORIALES
+   ============================================================ */
+.rule {
+  border: none;
+  border-top: 1px solid rgba(242,237,230,0.12);
+  margin: 0;
+}
+
+/* ============================================================
+   BOTONES — sin bordes redondeados
+   ============================================================ */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border: 1px solid rgba(242,237,230,0.25);
+  color: var(--fg);
+  background: transparent;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.btn:hover {
+  background: var(--lime);
+  color: var(--ink);
+  border-color: var(--lime);
+}
+
+.btn-fill {
+  background: var(--lime);
+  color: var(--ink);
+  border-color: var(--lime);
+  font-weight: 700;
+}
+.btn-fill:hover {
+  background: transparent;
+  color: var(--lime);
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================================
+   GRAIN TEXTURE — SVG noise superpuesto en todas las sections
+   Aporta profundidad sin ser kitsch
+   ============================================================ */
+.grain::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0.028;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 200px 200px;
+}
+
+/* Grain mas intenso en secciones claras */
+.grain-paper::after {
+  opacity: 0.045;
+}
+
+/* ============================================================
+   DARK DOT GRID para secciones oscuras
+   ============================================================ */
+.dot-grid {
+  background-image: radial-gradient(circle, rgba(242,237,230,0.07) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+/* ============================================================
+   GHOST TEXT — tipografia fantasma de fondo
+   ============================================================ */
+.ghost-text {
+  position: absolute;
+  font-family: var(--font-display);
+  font-weight: 900;
+  font-size: clamp(10rem, 22vw, 22rem);
+  letter-spacing: -0.05em;
+  text-transform: uppercase;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(242,237,230,0.04);
+  user-select: none;
+  pointer-events: none;
+  line-height: 1;
+  white-space: nowrap;
+  z-index: 0;
+}
+
+.ghost-text-dark {
+  -webkit-text-stroke: 1px rgba(12,11,9,0.06);
+}
+

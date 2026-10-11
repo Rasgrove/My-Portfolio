@@ -1,0 +1,168 @@
+{
+  "meta": {
+    "home": {
+      "title": "Yamil Alarcon — Desarrollador Full-Stack Bolivia",
+      "description": "Desarrollador Full-Stack en Bolivia. Landing pages, catálogos y sistemas para negocios. Contacta ahora y lanza tu proyecto."
+    }
+  },
+  "nav": {
+    "proyectos": "Proyectos",
+    "sobreMi": "Sobre mí",
+    "stack": "Stack",
+    "contacto": "Contacto"
+  },
+  "topBar": {
+    "whatsapp": "WhatsApp",
+    "email": "Email",
+    "langSwitch": "EN"
+  },
+  "hero": {
+    "tagline": "SISTEMAS 01",
+    "heading": "Landings, catálogos y sistemas que funcionan — sin fricción.",
+    "sub": "Ingeniero de Sistemas · Bolivia, UTC-4 · Inglés fluido",
+    "cta": "Hablemos ahora",
+    "ctaSub": "WhatsApp directo · Sin formularios"
+  },
+  "projects": {
+    "sectionTag": "TRABAJO 02",
+    "heading": "Casos de Estudio",
+    "sub": "Problemas reales · Soluciones reales · Resultados medibles",
+    "viewCase": "Ver Caso Completo",
+    "liveSite": "Sitio en Vivo",
+    "github": "GitHub",
+    "metric": "Impacto clave",
+    "items": {
+      "sistema-orientacion-ureal": {
+        "title": "Sistema de Orientación Vocacional (UREAL)",
+        "category": "SISTEMA WEB INSTITUCIONAL",
+        "problem": "La Universidad Real procesaba la orientación vocacional y las pruebas de aptitud completamente en papel, con pérdida de datos, lentitud y poca profesionalidad frente a postulantes.",
+        "solution": "Plataforma web full-stack con cliente-servidor PHP/MySQL: sistema experto de orientación, módulo de evaluación automática, panel administrativo y documentación UML completa bajo metodología XP.",
+        "result": "Proceso 100% automatizado puesto en producción real. La institución reemplazó el flujo manual por completo; el sistema sigue activo y administrable sin intervención técnica.",
+        "metric": "100% del flujo manual eliminado",
+        "shortDesc": "Plataforma web que reemplazó el proceso manual de captación estudiantil de la Universidad Real, poniendo la orientación vocacional en producción real."
+      },
+      "instrum-la-paz": {
+        "title": "Instrum — La Paz",
+        "category": "TIENDA ONLINE · JAMSTACK",
+        "problem": "Una tienda de instrumentos musicales en La Paz necesitaba presencia digital premium con gestión de catálogo autónoma, sin depender del desarrollador para cada actualización.",
+        "solution": "Plataforma Jamstack con React + Framer Motion + Decap CMS. El dueño actualiza el catálogo desde un panel visual, sin tocar código. SEO agresivo optimizado para búsquedas locales en La Paz.",
+        "result": "Sitio en producción, autogestionable. Posicionado para búsquedas clave en instrumentos musicales La Paz.",
+        "metric": "Gestión de catálogo sin código",
+        "shortDesc": "Tienda premium de instrumentos con CMS propio. El propietario actualiza el catálogo sin depender del desarrollador."
+      },
+      "portfolio-anterior": {
+        "title": "Portfolio Anterior — Antes / Después",
+        "category": "REDISEÑO · INGENIERÍA PROPIA",
+        "problem": "El portfolio existente (HTML/CSS/JS/PHP vanilla) acumulaba deuda técnica, carecía de internacionalización real y no comunicaba con claridad el valor del desarrollador ni facilitaba el contacto.",
+        "solution": "Rediseño completo en Next.js App Router + TypeScript + Tailwind + next-intl. Nueva identidad visual, copy orientado a conversión, SEO técnico y arquitectura moderna — lo que estás viendo ahora.",
+        "result": "Portfolio con identidad nueva, dos idiomas indexables y tiempo de carga < 1s. Experiencia que antes tomaba 4 segundos ahora es instantánea.",
+        "metric": "migración completa: PHP vanilla → Next.js",
+        "shortDesc": "Rediseño propio: del portfolio HTML/CSS/PHP al stack moderno que estás viendo ahora. La mejor prueba de criterio técnico."
+      },
+      "valdivia-asociados": {
+        "title": "Valdivia & Asociados",
+        "category": "ESTUDIO JURÍDICO · SEO TÉCNICO",
+        "problem": "Estudio jurídico boutique en La Paz sin presencia digital, que pierde potenciales clientes del segmento empresarial por no aparecer en búsquedas relevantes.",
+        "solution": "Sitio corporativo multi-página con React + Vite, SEO técnico agresivo (meta tags, Open Graph, JSON-LD, sitemap, robots), Decap CMS para gestión de contenidos y diseño que transmite seriedad y confianza.",
+        "result": "Firma indexada en Google con metadatos completos. Sitio en producción con formulario de contacto operativo y gestión autónoma de contenidos.",
+        "metric": "SEO técnico completo en producción",
+        "shortDesc": "Sitio corporativo para firma boutique de La Paz con SEO técnico completo — OG tags, JSON-LD, sitemap — y CMS propio."
+      },
+      "sistema-panaderia": {
+        "title": "Sistema de Caja e Inventario — Panadería",
+        "category": "SISTEMA DE GESTIÓN · PEQUEÑO NEGOCIO",
+        "problem": "Una panadería gestionaba flujo de caja e inventario en cuadernos, con errores frecuentes, sin historial y sin control de lo que entraba y salía por turno.",
+        "solution": "Sistema de administración de flujo de caja e inventario, a escala pequeña, pensado para 1 empleado de una panadería. React + Supabase + PostgreSQL. Interfaz mínima, sin curva de aprendizaje.",
+        "result": "El empleado registra ventas, gastos e inventario desde cualquier dispositivo. Cero errores de cierre de caja desde implementación.",
+        "metric": "0 errores de cierre de caja",
+        "shortDesc": "Sistema de administración de flujo de caja e inventario, a escala pequeña, pensado para 1 empleado de una panadería."
+      },
+      "crm-freelance": {
+        "title": "CRM Freelance — Sistema Propio",
+        "category": "CRM · HERRAMIENTA INTERNA",
+        "problem": "Llevar el seguimiento de clientes, proyectos y pagos en hojas de cálculo es ineficiente y no escala. El freelancer necesitaba visibilidad total de su pipeline.",
+        "solution": "CRM propio construido con React + Supabase + TypeScript. Gestión de clientes, proyectos, estado de pagos y notas. Acceso privado, autenticación segura. Demuestra la capacidad de construir este tipo de sistema para tu negocio.",
+        "result": "Herramienta operativa usada en el día a día. Tiempo de gestión administrativa reducido. Prueba directa de que puede construir un CRM similar para tu empresa.",
+        "metric": "Sistema construido y en uso activo",
+        "shortDesc": "CRM freelance propio con React + Supabase. Demuestra la capacidad de construir este tipo de sistema para cualquier negocio."
+      }
+    }
+  },
+  "about": {
+    "sectionTag": "PERFIL 03",
+    "heading": "Para negocios pequeños que quieren tecnología seria.",
+    "p1": "Soy Yamil Alarcon, Ingeniero de Sistemas egresado de la Universidad Real · Cámara Nacional de Comercio. Me especializo en negocios pequeños que necesitan landing pages, catálogos online y sistemas de inventario o administración — sin sobreingenierizar ni cobrar más de lo justo.",
+    "p2": "Inglés fluido (C2, EF SET). Disponible para clientes internacionales sin barreras de comunicación. Zona horaria Bolivia, UTC-4.",
+    "credential1": "Ingeniero de Sistemas · Universidad Real · Prom. 89/100",
+    "credential2": "English C2 · EF SET",
+    "testimonialLabel": "Lo que dicen",
+    "githubCta": "Ver GitHub"
+  },
+  "stack": {
+    "sectionTag": "TECNOLOGÍA 04",
+    "heading": "Stack. Profundidad sobre amplitud.",
+    "sub": "Seis tecnologías que domino end-to-end, no una lista para impresionar.",
+    "items": {
+      "nextjs": {
+        "label": "React / Next.js",
+        "desc": "Interfaces rápidas, SSR, rutas dinámicas."
+      },
+      "typescript": {
+        "label": "TypeScript",
+        "desc": "Código predecible y sin errores silenciosos."
+      },
+      "tailwind": {
+        "label": "Tailwind CSS",
+        "desc": "Diseño a medida sin CSS desordenado."
+      },
+      "node": {
+        "label": "Node.js · APIs REST",
+        "desc": "Back-end y lógica de negocio en el servidor."
+      },
+      "supabase": {
+        "label": "Supabase / PostgreSQL",
+        "desc": "Base de datos relacional con auth incluida."
+      },
+      "seo": {
+        "label": "SEO Técnico",
+        "desc": "Metadatos, JSON-LD, Core Web Vitals en verde."
+      }
+    }
+  },
+  "contact": {
+    "sectionTag": "CONTACTO 05",
+    "heading": "¿Tienes un proyecto?",
+    "sub": "Cuéntame de tu negocio. Una llamada de 15 minutos alcanza para entender qué necesitas y si puedo ayudarte.",
+    "timezone": "Horario · Bolivia UTC-4",
+    "namePlaceholder": "Tu nombre",
+    "emailPlaceholder": "Tu correo",
+    "messagePlaceholder": "Cuéntame de tu proyecto...",
+    "submit": "Enviar mensaje",
+    "sending": "Enviando...",
+    "successMsg": "¡Mensaje enviado! Te respondo pronto.",
+    "errorMsg": "Algo falló. Usa WhatsApp o Gmail directamente.",
+    "whatsappCta": "WhatsApp directo",
+    "gmailCta": "Gmail"
+  },
+  "footer": {
+    "role": "Full-Stack Developer · Systems Engineer",
+    "location": "La Paz, Bolivia · UTC-4",
+    "links": {
+      "linkedin": "LinkedIn",
+      "github": "GitHub",
+      "whatsapp": "WhatsApp"
+    },
+    "easterEggHint": "Presiona aquí para algo técnico",
+    "copy": "Diseñado e implementado por Yamil Alarcon."
+  },
+  "caseStudy": {
+    "problem": "EL PROBLEMA",
+    "solution": "LA SOLUCIÓN",
+    "result": "EL RESULTADO",
+    "techUsed": "TECNOLOGÍAS",
+    "testimonial": "TESTIMONIO",
+    "back": "← Volver a proyectos",
+    "liveLink": "Ver sitio en vivo",
+    "githubLink": "Ver en GitHub"
+  }
+}
