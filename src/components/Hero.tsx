@@ -35,15 +35,23 @@ export default function Hero({ locale }: HeroProps) {
       : "Hi Yamil, I'd like to talk about a project."
   )}`;
 
-  // Parallax suave en el background en scroll
+  const logoBadgeRef = useRef<HTMLDivElement>(null);
+
+  // Parallax suave en el background y logo badge en scroll
   useEffect(() => {
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
     const bg = bgRef.current;
-    if (!bg) return;
+    const badge = logoBadgeRef.current;
+    if (!bg && !badge) return;
 
     const onScroll = () => {
       const y = window.scrollY;
-      bg.style.transform = `translateY(${y * 0.35}px)`;
+      if (bg) bg.style.transform = `translateY(${y * 0.35}px)`;
+      if (badge) {
+        const op = Math.max(0, 1 - y / 450);
+        badge.style.opacity = `${op}`;
+        badge.style.transform = `translateY(${y * 0.18}px)`;
+      }
     };
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -106,31 +114,103 @@ export default function Hero({ locale }: HeroProps) {
           style={{
             objectFit: "cover",
             objectPosition: "top center",
-            maskImage: "linear-gradient(to left, rgba(12,11,9,0.98) 0%, rgba(12,11,9,0.6) 40%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to left, rgba(12,11,9,0.98) 0%, rgba(12,11,9,0.6) 40%, transparent 100%)",
+            maskImage: "linear-gradient(to left, #000 0%, #000 52%, rgba(0,0,0,0.65) 75%, transparent 100%)",
+            WebkitMaskImage: "linear-gradient(to left, #000 0%, #000 52%, rgba(0,0,0,0.65) 75%, transparent 100%)",
           }}
         />
-        {/* Background pattern fondo */}
+        {/* Background pattern fondo — mas visible */}
         <div style={{
           position: "absolute",
           inset: 0,
           backgroundImage: "url('/images/fondo-principal.webp')",
           backgroundSize: "cover",
           backgroundPosition: "center",
-          opacity: 0.25,
+          opacity: 0.38,
           mixBlendMode: "overlay",
           zIndex: -1,
         }} />
       </div>
 
+      {/* Dot-grid sutil en Hero */}
+      <div
+        className="dot-grid"
+        style={{
+          position: "absolute",
+          inset: 0,
+          zIndex: 1,
+          opacity: 0.8,
+          pointerEvents: "none",
+        }}
+      />
+
       {/* Overlay inferior: gradiente en la mitad izquierda donde esta el texto */}
       <div style={{
         position: "absolute",
         inset: 0,
-        background: "linear-gradient(to right, var(--ink) 35%, transparent 70%)",
+        background: "linear-gradient(to right, var(--ink) 22%, rgba(12,11,9,0.7) 45%, transparent 70%)",
         zIndex: 1,
         pointerEvents: "none",
       }} />
+
+      {/* CUADRADO GRANDE: Logo de emprendimiento original_YA_icon_only en esquina superior derecha — mas grande */}
+      <div
+        ref={logoBadgeRef}
+        style={{
+          position: "absolute",
+          top: "clamp(90px, 12vh, 120px)",
+          right: "var(--gutter)",
+          zIndex: 4,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          justifyContent: "center",
+          gap: "0.65rem",
+          padding: "clamp(1.1rem, 2vw, 1.6rem)",
+          background: "rgba(12, 11, 9, 0.72)",
+          backdropFilter: "blur(14px)",
+          WebkitBackdropFilter: "blur(14px)",
+          border: "1px solid rgba(242, 237, 230, 0.22)",
+          boxShadow: "0 16px 44px rgba(0, 0, 0, 0.65), inset 0 0 16px rgba(214, 244, 73, 0.05)",
+          transition: "border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease",
+          cursor: "default",
+        }}
+        onMouseEnter={(e) => {
+          e.currentTarget.style.borderColor = "var(--lime)";
+          e.currentTarget.style.boxShadow = "0 20px 48px rgba(0, 0, 0, 0.75), 0 0 24px rgba(214, 244, 73, 0.2)";
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.borderColor = "rgba(242, 237, 230, 0.22)";
+          e.currentTarget.style.boxShadow = "0 16px 44px rgba(0, 0, 0, 0.65), inset 0 0 16px rgba(214, 244, 73, 0.05)";
+        }}
+      >
+        <Image
+          src="/images/original_YA_icon_only.png"
+          alt="Y.A. Systems Icon"
+          width={96}
+          height={96}
+          priority
+          style={{
+            width: "clamp(72px, 7vw, 98px)",
+            height: "auto",
+            objectFit: "contain",
+            filter: "invert(1)", // Todo en negro a blanco puro con alto contraste
+            transition: "transform 0.3s ease",
+          }}
+        />
+        <span
+          style={{
+            fontFamily: "var(--font-mono)",
+            fontSize: "clamp(0.68rem, 0.85vw, 0.8rem)",
+            letterSpacing: "0.24em",
+            textTransform: "uppercase",
+            color: "var(--lime)",
+            fontWeight: 700,
+          }}
+        >
+          Y.A. SYSTEMS
+        </span>
+      </div>
+
 
       {/* CONTENIDO — sobre el overlay */}
       <div style={{ position: "relative", zIndex: 2, maxWidth: "1400px" }}>
@@ -185,11 +265,9 @@ export default function Hero({ locale }: HeroProps) {
             {t.sub}
           </p>
           <a
-            href={waUrl}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#contacto"
             className="btn btn-fill"
-            aria-label={locale === "es" ? "Contactar por WhatsApp" : "Contact via WhatsApp"}
+            aria-label={locale === "es" ? "Ir a la sección de contacto" : "Go to contact section"}
           >
             {t.cta} &rarr;
           </a>

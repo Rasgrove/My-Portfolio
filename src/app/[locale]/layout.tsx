@@ -5,6 +5,7 @@ import { routing } from "@/i18n/routing";
 import TopBar from "@/components/TopBar";
 import SmoothScroll from "@/components/SmoothScroll";
 import CustomCursor from "@/components/CustomCursor";
+import FloatingWhatsApp from "@/components/FloatingWhatsApp";
 import "../globals.css";
 
 const jetBrains = JetBrains_Mono({
@@ -123,6 +124,7 @@ export default async function LocaleLayout({
         <SmoothScroll />
         <CustomCursor />
         <main id="main-content">{children}</main>
+        <FloatingWhatsApp locale={locale} />
       </body>
     </html>
   );

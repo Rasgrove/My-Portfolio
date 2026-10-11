@@ -1,5 +1,4 @@
 import { testimonial, testimonialEn } from "@/lib/projects";
-import Image from "next/image";
 
 export default function AboutSection({ locale, msgs }: { locale: string; msgs: any }) {
   const t = msgs.about;
@@ -11,26 +10,6 @@ export default function AboutSection({ locale, msgs }: { locale: string; msgs: a
       className="grain grain-paper"
       style={{ position: "relative", overflow: "hidden", background: "var(--paper)", color: "var(--fg-dark)" }}
     >
-      {/* Photo as faded bg element top-right — no frame, editorial */}
-      <div style={{
-        position: "absolute", right: 0, top: 0, bottom: 0,
-        width: "clamp(260px, 38%, 480px)", zIndex: 0, pointerEvents: "none",
-      }}>
-        <Image
-          src="/images/yamil-alarcon.webp"
-          alt=""
-          fill
-          aria-hidden="true"
-          sizes="38vw"
-          style={{
-            objectFit: "cover", objectPosition: "top center",
-            opacity: 0.12,
-            maskImage: "linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 100%)",
-            WebkitMaskImage: "linear-gradient(to left, rgba(0,0,0,0.5) 0%, transparent 100%)",
-          }}
-        />
-      </div>
-
       {/* Ghost text */}
       <span className="ghost-text ghost-text-dark" style={{ bottom: "-2rem", right: "-4rem" }}>ABOUT</span>
 

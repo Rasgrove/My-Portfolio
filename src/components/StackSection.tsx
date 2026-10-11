@@ -25,11 +25,19 @@ export default function StackSection({ locale, msgs }: { locale: string; msgs: a
   return (
     <section id="stack" className="grain" style={{ position: "relative", overflow: "hidden", background: "var(--ink-2)" }}>
 
-      {/* Dot grid sutil */}
+      {/* Dot grid sutil — mas visible */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
-        backgroundImage: "radial-gradient(circle, rgba(242,237,230,0.05) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, rgba(242,237,230,0.12) 1.2px, transparent 1.2px)",
         backgroundSize: "28px 28px",
+      }} />
+
+      {/* Imagen de fondo sutil */}
+      <div style={{
+        position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
+        backgroundImage: "url('/images/fondo-principal.webp')",
+        backgroundSize: "cover", backgroundPosition: "center left",
+        opacity: 0.10, mixBlendMode: "luminosity",
       }} />
 
       {/* Ghost text STACK al fondo */}

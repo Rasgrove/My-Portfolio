@@ -9,20 +9,20 @@ export default function ProjectsSection({ locale, msgs }: { locale: string; msgs
   return (
     <section id="proyectos" style={{ position: "relative", background: "var(--ink-2)", paddingBottom: "clamp(5rem, 12vw, 10rem)", overflow: "hidden" }} className="grain">
 
-      {/* Dot grid sutil */}
+      {/* Dot grid sutil — mas visible */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
-        backgroundImage: "radial-gradient(circle, rgba(242,237,230,0.06) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, rgba(242,237,230,0.12) 1.2px, transparent 1.2px)",
         backgroundSize: "28px 28px",
         pointerEvents: "none",
       }} />
 
-      {/* Imagen de fondo tenue */}
+      {/* Imagen de fondo tenue — un poco mas visible */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0,
         backgroundImage: "url('/images/fondo-principal.webp')",
         backgroundSize: "cover", backgroundPosition: "center right",
-        opacity: 0.05, mixBlendMode: "luminosity", pointerEvents: "none",
+        opacity: 0.12, mixBlendMode: "luminosity", pointerEvents: "none",
       }} />
 
       {/* Ghost text WORK */}

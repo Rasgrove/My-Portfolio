@@ -66,24 +66,24 @@ export default function WorkflowSection({ locale }: { locale: string }) {
       className="grain"
       style={{ position: "relative", overflow: "hidden", background: "var(--ink)" }}
     >
-      {/* Glitch background — mas visible */}
-      <div style={{ position: "absolute", inset: 0, zIndex: 0, opacity: 0.14 }}>
+      {/* Glitch background — un poco mas visible */}
+      <div style={{ position: "absolute", inset: 0, zIndex: 0, opacity: 0.22 }}>
         <Image src="/images/glitch-verdes-negros.webp" alt="" fill style={{ objectFit: "cover" }} />
       </div>
 
-      {/* Fondo laptop/codigo — toque editorial */}
+      {/* Fondo laptop/codigo — toque editorial mas visible */}
       <div style={{
         position: "absolute", right: 0, top: 0, bottom: 0, width: "50%", zIndex: 0,
         backgroundImage: "url('/images/fondo-principal.webp')",
         backgroundSize: "cover", backgroundPosition: "center",
-        opacity: 0.08, maskImage: "linear-gradient(to right, transparent, rgba(0,0,0,0.7) 60%)",
+        opacity: 0.15, maskImage: "linear-gradient(to right, transparent, rgba(0,0,0,0.7) 60%)",
         WebkitMaskImage: "linear-gradient(to right, transparent, rgba(0,0,0,0.7) 60%)",
       }} />
 
       {/* Dot grid */}
       <div style={{
         position: "absolute", inset: 0, zIndex: 0, pointerEvents: "none",
-        backgroundImage: "radial-gradient(circle, rgba(214,244,73,0.05) 1px, transparent 1px)",
+        backgroundImage: "radial-gradient(circle, rgba(214,244,73,0.11) 1.2px, transparent 1.2px)",
         backgroundSize: "32px 32px",
       }} />
 
