@@ -2,7 +2,7 @@
 
 import { useEffect, useRef } from "react";
 
-// Spring cursor: low stiffness, high damping — feels physical, not CSS
+// Inverted lens cursor with physics and high contrast (mix-blend-mode: difference)
 export default function CustomCursor() {
   const dotRef = useRef<HTMLDivElement>(null);
   const ringRef = useRef<HTMLDivElement>(null);
@@ -17,15 +17,17 @@ export default function CustomCursor() {
 
     let mx = window.innerWidth / 2;
     let my = window.innerHeight / 2;
-    let rx = mx, ry = my;
+    let rx = mx;
+    let ry = my;
     let rafId: number;
     let isHovering = false;
     let isClicking = false;
 
-    // Spring physics params
-    const stiffness = 0.12;
-    const damping = 0.78;
-    let vx = 0, vy = 0;
+    // Spring physics params for smooth organic trailing
+    const stiffness = 0.16;
+    const damping = 0.75;
+    let vx = 0;
+    let vy = 0;
 
     const onMove = (e: MouseEvent) => {
       mx = e.clientX;
@@ -33,24 +35,20 @@ export default function CustomCursor() {
       dot.style.transform = `translate(${mx}px, ${my}px) translate(-50%, -50%)`;
     };
 
-    const onEnter = () => { isHovering = true; };
-    const onLeave = () => { isHovering = false; };
-    const onDown  = () => { isClicking = true; };
-    const onUp    = () => { isClicking = false; };
-
-    // Attach hover detection to all interactive elements
-    const targets = () => document.querySelectorAll("a, button, [role='button'], [data-cursor]");
-    const attachTargets = () => {
-      targets().forEach(el => {
-        el.addEventListener("mouseenter", onEnter);
-        el.addEventListener("mouseleave", onLeave);
-      });
+    const onMouseOver = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement | null)?.closest(
+        "a, button, [role='button'], [data-cursor], input, textarea, select"
+      );
+      isHovering = !!target;
     };
-    attachTargets();
 
-    document.addEventListener("mousemove", onMove);
-    document.addEventListener("mousedown", onDown);
-    document.addEventListener("mouseup", onUp);
+    const onDown = () => { isClicking = true; };
+    const onUp = () => { isClicking = false; };
+
+    document.addEventListener("mousemove", onMove, { passive: true });
+    document.addEventListener("mouseover", onMouseOver, { passive: true });
+    document.addEventListener("mousedown", onDown, { passive: true });
+    document.addEventListener("mouseup", onUp, { passive: true });
 
     const tick = () => {
       // Spring toward mouse
@@ -61,13 +59,16 @@ export default function CustomCursor() {
       rx += vx;
       ry += vy;
 
-      const size = isClicking ? 18 : isHovering ? 44 : 26;
-      const opacity = isHovering ? 0.5 : 0.35;
+      const size = isClicking ? 20 : isHovering ? 52 : 32;
 
       ring.style.transform = `translate(${rx}px, ${ry}px) translate(-50%, -50%)`;
       ring.style.width = `${size}px`;
       ring.style.height = `${size}px`;
-      ring.style.opacity = String(opacity);
+      ring.style.background = isClicking
+        ? "rgba(255, 255, 255, 0.4)"
+        : isHovering
+        ? "rgba(255, 255, 255, 0.2)"
+        : "transparent";
 
       rafId = requestAnimationFrame(tick);
     };
@@ -76,6 +77,7 @@ export default function CustomCursor() {
     return () => {
       cancelAnimationFrame(rafId);
       document.removeEventListener("mousemove", onMove);
+      document.removeEventListener("mouseover", onMouseOver);
       document.removeEventListener("mousedown", onDown);
       document.removeEventListener("mouseup", onUp);
     };
@@ -83,34 +85,44 @@ export default function CustomCursor() {
 
   return (
     <>
+      {/* Central precise dot in negative / difference mode */}
       <div
         ref={dotRef}
         aria-hidden="true"
         style={{
           position: "fixed",
-          top: 0, left: 0,
-          width: 5, height: 5,
-          background: "var(--lime)",
+          top: 0,
+          left: 0,
+          width: 7,
+          height: 7,
+          background: "#ffffff",
           borderRadius: "50%",
           pointerEvents: "none",
-          zIndex: 9999,
+          zIndex: 99999,
+          mixBlendMode: "difference",
           willChange: "transform",
         }}
       />
+
+      {/* Trailing lens ring with thicker 2.2px line and difference blending */}
       <div
         ref={ringRef}
         aria-hidden="true"
         style={{
           position: "fixed",
-          top: 0, left: 0,
-          width: 26, height: 26,
+          top: 0,
+          left: 0,
+          width: 32,
+          height: 32,
           background: "transparent",
-          border: "1.5px solid var(--lime)",
+          border: "2.2px solid #ffffff",
           borderRadius: "50%",
           pointerEvents: "none",
-          zIndex: 9998,
-          willChange: "transform, width, height",
-          transition: "width 0.25s cubic-bezier(0.34,1.56,0.64,1), height 0.25s cubic-bezier(0.34,1.56,0.64,1)",
+          zIndex: 99998,
+          mixBlendMode: "difference",
+          opacity: 1,
+          willChange: "transform, width, height, background",
+          transition: "width 0.22s cubic-bezier(0.16, 1, 0.3, 1), height 0.22s cubic-bezier(0.16, 1, 0.3, 1), background 0.2s ease",
         }}
       />
     </>

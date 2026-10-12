@@ -24,27 +24,23 @@ export default function AboutSection({ locale, msgs }: { locale: string; msgs: a
 
 
 
-        {/* Heading editorial — asimetrico en dos lineas */}
+        {/* Heading editorial — asimetrico en dos lineas, contenido en movil para palabras largas como BUSINESSES / TECNOLOGIA */}
         <h2 style={{
           fontFamily: "var(--font-display)",
           fontWeight: 900,
-          fontSize: "clamp(2.8rem, 9vw, 8rem)",
+          fontSize: "clamp(1.85rem, 8.2vw, 8rem)",
           letterSpacing: "-0.04em",
           textTransform: "uppercase",
           lineHeight: 0.92,
           color: "var(--ink)",
           marginBottom: "clamp(4rem, 8vw, 7rem)",
+          wordBreak: "break-word",
         }}>
           {t.heading}
         </h2>
 
-        {/* Grid asimetrico: texto izq, testimonio der */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "3fr 2fr",
-          gap: "clamp(3rem, 8vw, 8rem)",
-          alignItems: "flex-start",
-        }}>
+        {/* Grid asimetrico: texto izq, testimonio der — responsive con about-grid */}
+        <div className="about-grid">
           {/* Bio */}
           <div>
             <p style={{ fontFamily: "var(--font-text)", fontSize: "clamp(1rem, 1.4vw, 1.2rem)", lineHeight: 1.75, color: "#3a3530", marginBottom: "1.5rem" }}>
@@ -117,8 +113,22 @@ export default function AboutSection({ locale, msgs }: { locale: string; msgs: a
       </div>
 
       <style>{`
+        .about-grid {
+          display: grid;
+          grid-template-columns: 3fr 2fr;
+          gap: clamp(3rem, 8vw, 8rem);
+          align-items: flex-start;
+        }
         @media (max-width: 768px) {
-          #sobre-mi [style*="grid-template-columns: 3fr"] { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .about-grid {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+          }
+        }
+        @media (max-width: 480px) {
+          #sobre-mi h2, #about h2 {
+            font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
+          }
         }
       `}</style>
     </section>

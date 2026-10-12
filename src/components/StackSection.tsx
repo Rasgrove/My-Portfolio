@@ -47,15 +47,10 @@ export default function StackSection({ locale, msgs }: { locale: string; msgs: a
         <span className="kicker">{t.sectionTag}</span>
         <div style={{ width: "clamp(3rem, 8vw, 7rem)", height: 2, background: "var(--lime)", marginBottom: "1.5rem" }} />
 
-        {/* Heading + lista — layout asimetrico */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "2fr 3fr",
-          gap: "clamp(3rem, 8vw, 8rem)",
-          alignItems: "flex-start",
-        }}>
-          {/* Heading izquierdo — grande y sticky-ish */}
-          <div style={{ position: "sticky", top: "80px" }}>
+        {/* Heading + lista — layout asimetrico con responsive grid */}
+        <div className="stack-grid">
+          {/* Heading izquierdo — grande y sticky-ish en PC */}
+          <div className="stack-sticky-heading">
             <h2 style={{
               fontFamily: "var(--font-display)",
               fontWeight: 900,
@@ -132,8 +127,25 @@ export default function StackSection({ locale, msgs }: { locale: string; msgs: a
       </div>
 
       <style>{`
-        @media (max-width: 640px) {
-          #stack [style*="grid-template-columns: 2fr"] { grid-template-columns: 1fr !important; gap: 2rem !important; }
+        .stack-grid {
+          display: grid;
+          grid-template-columns: 2fr 3fr;
+          gap: clamp(3rem, 8vw, 8rem);
+          align-items: flex-start;
+        }
+        .stack-sticky-heading {
+          position: sticky;
+          top: 80px;
+        }
+        @media (max-width: 768px) {
+          .stack-grid {
+            grid-template-columns: 1fr !important;
+            gap: 2.5rem !important;
+          }
+          .stack-sticky-heading {
+            position: static !important;
+            top: auto !important;
+          }
         }
       `}</style>
     </section>

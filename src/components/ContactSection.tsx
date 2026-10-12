@@ -154,8 +154,8 @@ export default function ContactSection({ locale }: { locale: string }) {
           {t.sub}
         </p>
 
-        {/* Dos columnas: form izq, contacto directo der */}
-        <div style={{ display: "grid", gridTemplateColumns: "3fr 2fr", gap: "clamp(3rem, 7vw, 7rem)", alignItems: "flex-start" }}>
+        {/* Dos columnas: form izq, contacto directo der — responsive con contact-grid */}
+        <div className="contact-grid">
 
           {/* Formulario — editorial con lineas limpias */}
           <div
@@ -393,8 +393,17 @@ export default function ContactSection({ locale }: { locale: string }) {
 
 
       <style>{`
+        .contact-grid {
+          display: grid;
+          grid-template-columns: 3fr 2fr;
+          gap: clamp(3rem, 7vw, 7rem);
+          align-items: flex-start;
+        }
         @media (max-width: 768px) {
-          #contacto [style*="grid-template-columns: 3fr"] { grid-template-columns: 1fr !important; gap: 3rem !important; }
+          .contact-grid {
+            grid-template-columns: 1fr !important;
+            gap: 3rem !important;
+          }
         }
       `}</style>
     </section>

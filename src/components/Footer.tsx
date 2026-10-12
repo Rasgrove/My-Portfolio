@@ -303,14 +303,6 @@ export default function Footer({ locale }: { locale: string }) {
         </div>
       </div>
 
-      <style>{`
-        @media (max-width: 640px) {
-          #colofon div[style*="grid-template-columns: 1fr auto"] {
-            grid-template-columns: 1fr !important;
-            gap: 1.5rem !important;
-          }
-        }
-      `}</style>
     </footer>
   );
 }

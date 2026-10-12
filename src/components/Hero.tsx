@@ -223,12 +223,18 @@ export default function Hero({ locale }: HeroProps) {
           Bolivia &middot; UTC-4 &middot; Fluent English
         </span>
 
-        {/* Titulo principal — gigante, con overflow clip para animacion */}
+        {/* Titulo principal — aumentado en PC entre lo anterior y actual, contenido en movil */}
         <h1 aria-label={`${t.role1} ${t.role2}`}>
           {[t.role1, t.role2].map((word, i) => (
             <div
               key={word}
-              style={{ overflow: "hidden", lineHeight: 0.92, display: "block" }}
+              style={{
+                overflow: "hidden",
+                lineHeight: 0.92,
+                display: "block",
+                paddingRight: "0.18em",
+                marginRight: "-0.18em",
+              }}
             >
               <span
                 className="hero-word"
@@ -236,7 +242,7 @@ export default function Hero({ locale }: HeroProps) {
                   display: "block",
                   fontFamily: "var(--font-display)",
                   fontWeight: 900,
-                  fontSize: "clamp(4rem, 13vw, 12rem)",
+                  fontSize: "clamp(2.1rem, 11vw, 11rem)",
                   letterSpacing: "-0.04em",
                   textTransform: "uppercase",
                   color: i === 1 ? "var(--lime)" : "var(--fg)",
@@ -250,14 +256,7 @@ export default function Hero({ locale }: HeroProps) {
         </h1>
 
         {/* Subtitulo + CTA — fila inferior */}
-        <div style={{
-          display: "grid",
-          gridTemplateColumns: "1fr auto",
-          gap: "2rem",
-          alignItems: "flex-end",
-          marginTop: "clamp(2.5rem, 5vw, 4.5rem)",
-          maxWidth: 860,
-        }}>
+        <div className="hero-sub-row">
           <p
             className="body-text"
             style={{ color: "var(--fg-dim)", fontSize: "clamp(0.9rem, 1.1vw, 1.05rem)", maxWidth: "46ch" }}
@@ -291,9 +290,27 @@ export default function Hero({ locale }: HeroProps) {
 
       {/* Responsive */}
       <style>{`
+        .hero-sub-row {
+          display: grid;
+          grid-template-columns: 1fr auto;
+          gap: 2rem;
+          align-items: flex-end;
+          margin-top: clamp(2.5rem, 5vw, 4.5rem);
+          max-width: 860px;
+        }
+        @media (min-width: 769px) {
+          .hero-word {
+            font-size: clamp(3.8rem, 11.2vw, 11rem) !important;
+          }
+        }
         @media (max-width: 640px) {
-          #hero > div[style*="zIndex: 2"] { max-width: 100% !important; }
-          #hero > div[style*="zIndex: 2"] > div[style*="grid"] { grid-template-columns: 1fr !important; gap: 1.5rem !important; }
+          .hero-word {
+            font-size: clamp(1.95rem, 9vw, 2.6rem) !important;
+          }
+          .hero-sub-row {
+            grid-template-columns: 1fr !important;
+            gap: 1.5rem !important;
+          }
         }
       `}</style>
     </section>
