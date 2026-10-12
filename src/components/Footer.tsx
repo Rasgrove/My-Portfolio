@@ -165,11 +165,11 @@ export default function Footer({ locale }: { locale: string }) {
           </button>
         </div>
 
-        {/* Bloque central: CTA y ASCII Donut lado a lado o balanceado */}
+        {/* Bloque central: CTA y ASCII Donut lado a lado en PC, apilado en móvil */}
         <div
+          className="footer-cta-donut-grid"
           style={{
             display: "grid",
-            gridTemplateColumns: "1fr auto",
             alignItems: "center",
             gap: "2.5rem",
             marginBottom: "clamp(2rem, 4vw, 3rem)",
@@ -216,8 +216,9 @@ export default function Footer({ locale }: { locale: string }) {
             </a>
           </div>
 
-          {/* ASCII Donut — reducido de tamaño, zoom alejado, nítido y elegante */}
+          {/* ASCII Donut — visible tanto en PC como en móvil (apilado responsivo) */}
           <div
+            className="footer-donut-wrapper"
             aria-hidden="true"
             style={{
               display: "flex",
@@ -227,11 +228,27 @@ export default function Footer({ locale }: { locale: string }) {
               border: "1px solid rgba(214, 244, 73, 0.15)",
               background: "rgba(12, 11, 9, 0.5)",
               borderRadius: "4px",
+              width: "fit-content",
             }}
           >
             <AsciiDonut visible={true} />
           </div>
         </div>
+
+        <style jsx>{`
+          .footer-cta-donut-grid {
+            grid-template-columns: 1fr auto;
+          }
+          @media (max-width: 768px) {
+            .footer-cta-donut-grid {
+              grid-template-columns: 1fr !important;
+              gap: 1.75rem !important;
+            }
+            .footer-donut-wrapper {
+              justify-self: start;
+            }
+          }
+        `}</style>
 
         {/* Fila inferior de metadata técnica y redes */}
         <div

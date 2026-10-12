@@ -147,6 +147,12 @@ export default function StackSection({ locale, msgs }: { locale: string; msgs: a
             top: auto !important;
           }
         }
+        @media (max-width: 480px) {
+          .stack-grid h2 {
+            font-size: clamp(1.65rem, 7.8vw, 2.4rem) !important;
+            word-break: break-word;
+          }
+        }
       `}</style>
     </section>
   );

@@ -1,8 +1,10 @@
 import { notFound } from "next/navigation";
 import NextLink from "next/link";
+import Image from "next/image";
 import { projects, testimonial, testimonialEn } from "@/lib/projects";
 import type { Metadata } from "next";
 import { routing } from "@/i18n/routing";
+import CaseStudyContainer from "@/components/CaseStudyContainer";
 
 // Static imports — Turbopack cannot resolve dynamic template literal imports
 import esMessages from "../../../../../messages/es.json";
@@ -85,162 +87,389 @@ export default async function CaseStudyPage({
     ...(project.liveUrl ? { url: project.liveUrl } : {}),
   };
 
-  const backHref = `/${locale}`;
-
   return (
-    <div style={{ paddingTop: "56px", minHeight: "100vh", background: "var(--bg-dark)" }}>
-      <article style={{ maxWidth: 780, margin: "0 auto", padding: "4rem 2rem 7rem" }}>
-        {/* Back link */}
-        <NextLink
-          href={backHref}
+    <CaseStudyContainer locale={locale} slug={slug} backText={cs.back}>
+      {/* Encabezado: Categoría */}
+      <span
+        style={{
+          fontFamily: "var(--font-mono)",
+          fontSize: "0.72rem",
+          letterSpacing: "0.2em",
+          textTransform: "uppercase",
+          color: "var(--lime)",
+          display: "block",
+          marginBottom: "0.85rem",
+          fontWeight: 700,
+        }}
+      >
+        {item.category}
+      </span>
+
+      {/* Título Principal */}
+      <h1
+        style={{
+          fontFamily: "var(--font-display)",
+          fontSize: "clamp(2rem, 4.5vw, 3.4rem)",
+          fontWeight: 900,
+          letterSpacing: "-0.03em",
+          lineHeight: 1.08,
+          marginBottom: "1.5rem",
+          color: "var(--fg)",
+          textTransform: "uppercase",
+        }}
+      >
+        {item.title}
+      </h1>
+
+      {/* Tags de Tecnologías */}
+      <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem 1rem", marginBottom: "2.5rem" }}>
+        {project.tech.map((tech) => (
+          <span
+            key={tech}
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.14em",
+              textTransform: "uppercase",
+              padding: "0.3rem 0.75rem",
+              borderRadius: "4px",
+              background: "rgba(242, 237, 230, 0.04)",
+              border: "1px solid rgba(242, 237, 230, 0.12)",
+              color: "rgba(242,237,230,0.6)",
+            }}
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+
+      {/* Showcase Visual: Tamaño equilibrado (720px max), proporción real, cero corte, cero zoom */}
+      {project.image && (
+        <div
           style={{
-            color: "var(--text-muted)",
-            textDecoration: "none",
-            fontSize: "0.82rem",
-            fontFamily: "var(--font-mono), monospace",
-            display: "inline-flex",
-            alignItems: "center",
-            gap: "0.4rem",
-            marginBottom: "3rem",
-            letterSpacing: "0.1em",
-            textTransform: "uppercase",
+            maxWidth: 720,
+            margin: "0 auto 3.5rem",
+            borderRadius: "8px",
+            border: "1px solid rgba(242, 237, 230, 0.14)",
+            background: "rgba(12, 12, 11, 0.95)",
+            boxShadow: "0 14px 36px rgba(0, 0, 0, 0.5)",
+            overflow: "hidden",
           }}
         >
-          ← {cs.back}
-        </NextLink>
-
-        {/* Category */}
-        <p className="hud-label" style={{ marginBottom: "0.75rem" }}>{item.category}</p>
-
-        {/* Title */}
-        <h1
-          style={{
-            fontFamily: "var(--font-heading)",
-            fontSize: "clamp(1.8rem, 3.5vw, 3rem)",
-            fontWeight: 800,
-            letterSpacing: "-0.025em",
-            lineHeight: 1.1,
-            marginBottom: "2rem",
-            color: "var(--text-primary)",
-          }}
-        >
-          {item.title}
-        </h1>
-
-        {/* Tech tags */}
-        <div style={{ display: "flex", flexWrap: "wrap", gap: "0.4rem", marginBottom: "3.5rem" }}>
-          {project.tech.map((tech) => (
-            <span
-              key={tech}
-              style={{
-                background: "rgba(0,229,195,0.06)",
-                border: "1px solid var(--border-accent)",
-                color: "var(--accent)",
-                padding: "0.25rem 0.75rem",
-                borderRadius: "50px",
-                fontSize: "0.72rem",
-                fontFamily: "var(--font-mono), monospace",
-              }}
-            >
-              {tech}
-            </span>
-          ))}
-        </div>
-
-        {/* Case study body */}
-        <div style={{ display: "flex", flexDirection: "column", gap: "3rem" }}>
-          <CaseSection label={cs.problem} content={item.problem} />
-          <CaseSection label={cs.solution} content={item.solution} />
-          <CaseSection label={cs.result} content={item.result} accent />
-
-          {/* Metric */}
+          {/* Barra de cabecera técnica minimalista */}
           <div
             style={{
-              background: "rgba(0,229,195,0.05)",
-              border: "1.5px solid var(--border-accent)",
-              borderRadius: "12px",
+              display: "flex",
+              alignItems: "center",
+              justifyContent: "space-between",
+              padding: "0.5rem 0.85rem",
+              borderBottom: "1px solid rgba(242, 237, 230, 0.08)",
+              background: "rgba(18, 17, 15, 0.85)",
+            }}
+          >
+            <div style={{ display: "flex", gap: "0.4rem" }}>
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "rgba(242,237,230,0.2)" }} />
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "rgba(242,237,230,0.2)" }} />
+              <span style={{ width: 7, height: 7, borderRadius: "50%", background: "rgba(242,237,230,0.2)" }} />
+            </div>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.62rem",
+                color: "rgba(242,237,230,0.4)",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+              }}
+            >
+              {locale === "es" ? "CAPTURA DE PRODUCCIÓN" : "PRODUCTION SCREENSHOT"}
+            </span>
+          </div>
+
+          <Image
+            src={project.image}
+            alt={item.title}
+            width={1920}
+            height={1080}
+            priority
+            quality={95}
+            sizes="(max-width: 768px) 100vw, 720px"
+            style={{
+              width: "100%",
+              height: "auto",
+              display: "block",
+            }}
+          />
+        </div>
+      )}
+
+      {/* Desglose Editorial del Caso */}
+      <div style={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
+        {/* Bloque 01: El Problema */}
+        <section
+          style={{
+            borderLeft: "2px solid rgba(242, 237, 230, 0.15)",
+            paddingLeft: "1.5rem",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "rgba(242, 237, 230, 0.45)",
+              display: "block",
+              marginBottom: "0.6rem",
+              fontWeight: 700,
+            }}
+          >
+            01 // {cs.problem}
+          </span>
+          <p
+            style={{
+              fontFamily: "var(--font-text)",
+              color: "rgba(242, 237, 230, 0.85)",
+              lineHeight: 1.75,
+              fontSize: "1.02rem",
+              margin: 0,
+            }}
+          >
+            {item.problem}
+          </p>
+        </section>
+
+        {/* Bloque 02: La Solución */}
+        <section
+          style={{
+            borderLeft: "2px solid var(--lime)",
+            paddingLeft: "1.5rem",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--lime)",
+              display: "block",
+              marginBottom: "0.6rem",
+              fontWeight: 700,
+            }}
+          >
+            02 // {cs.solution}
+          </span>
+          <p
+            style={{
+              fontFamily: "var(--font-text)",
+              color: "rgba(242, 237, 230, 0.85)",
+              lineHeight: 1.75,
+              fontSize: "1.02rem",
+              margin: 0,
+            }}
+          >
+            {item.solution}
+          </p>
+        </section>
+
+        {/* Bloque 03: El Resultado */}
+        <section
+          style={{
+            borderLeft: "2px solid rgba(242, 237, 230, 0.35)",
+            paddingLeft: "1.5rem",
+          }}
+        >
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "rgba(242, 237, 230, 0.7)",
+              display: "block",
+              marginBottom: "0.6rem",
+              fontWeight: 700,
+            }}
+          >
+            03 // {cs.result}
+          </span>
+          <p
+            style={{
+              fontFamily: "var(--font-text)",
+              color: "rgba(242, 237, 230, 0.85)",
+              lineHeight: 1.75,
+              fontSize: "1.02rem",
+              margin: 0,
+            }}
+          >
+            {item.result}
+          </p>
+        </section>
+
+        {/* Métrica / Logro clave resaltado */}
+        {item.metric && (
+          <div
+            style={{
+              background: "rgba(214, 244, 73, 0.05)",
+              border: "1px solid rgba(214, 244, 73, 0.25)",
+              borderRadius: "8px",
               padding: "1.25rem 1.75rem",
+              marginTop: "0.5rem",
             }}
           >
             <span
               style={{
-                color: "var(--accent2)",
-                fontFamily: "var(--font-mono), monospace",
-                fontSize: "0.72rem",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.65rem",
                 letterSpacing: "0.2em",
                 textTransform: "uppercase",
+                color: "var(--lime)",
+                display: "block",
+                marginBottom: "0.35rem",
+                fontWeight: 700,
+              }}
+            >
+              {locale === "es" ? "IMPACTO VERIFICABLE" : "KEY IMPACT"}
+            </span>
+            <span
+              style={{
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.95rem",
+                color: "var(--fg)",
+                letterSpacing: "0.04em",
                 fontWeight: 700,
               }}
             >
               ▶ {item.metric}
             </span>
           </div>
-        </div>
+        )}
+      </div>
 
-        {/* Testimonial */}
-        {showTestimonial && (
-          <div style={{ marginTop: "4rem" }}>
-            <p className="hud-label" style={{ marginBottom: "1rem" }}>{cs.testimonial}</p>
-            <blockquote
+      {/* Testimonio si existe */}
+      {showTestimonial && (
+        <div style={{ marginTop: "3.5rem" }}>
+          <span
+            style={{
+              fontFamily: "var(--font-mono)",
+              fontSize: "0.68rem",
+              letterSpacing: "0.18em",
+              textTransform: "uppercase",
+              color: "var(--lime)",
+              display: "block",
+              marginBottom: "1rem",
+              fontWeight: 700,
+            }}
+          >
+            {cs.testimonial}
+          </span>
+          <blockquote
+            style={{
+              background: "rgba(18, 17, 15, 0.6)",
+              border: "1px solid rgba(242, 237, 230, 0.1)",
+              borderLeft: "3px solid var(--lime)",
+              borderRadius: "8px",
+              padding: "1.75rem",
+              position: "relative",
+            }}
+          >
+            <p
               style={{
-                background: "var(--bg-card)",
-                border: "1.5px solid var(--border-subtle)",
-                borderLeft: "3px solid var(--accent)",
-                borderRadius: "16px",
-                padding: "2rem",
-                position: "relative",
+                fontFamily: "var(--font-text)",
+                color: "rgba(242, 237, 230, 0.8)",
+                lineHeight: 1.7,
+                fontStyle: "italic",
+                marginBottom: "1.25rem",
+                fontSize: "0.98rem",
               }}
             >
-              <span aria-hidden="true" style={{ position: "absolute", top: "1rem", right: "1.5rem", fontSize: "3rem", lineHeight: 1, color: "rgba(0,229,195,0.08)", fontFamily: "Georgia, serif" }}>❝</span>
-              <p style={{ color: "var(--text-secondary)", lineHeight: 1.75, fontStyle: "italic", marginBottom: "1.5rem" }}>
-                &ldquo;{testi.quote}&rdquo;
-              </p>
-              <footer style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
-                <div>
-                  <p style={{ fontFamily: "var(--font-heading)", fontWeight: 700, fontSize: "0.95rem", color: "var(--text-primary)", marginBottom: "0.2rem" }}>{testi.name}</p>
-                  <p style={{ color: "var(--text-muted)", fontSize: "0.78rem", fontFamily: "var(--font-mono), monospace" }}>{testi.role}</p>
-                </div>
-                <a href={testi.linkedin} target="_blank" rel="noopener noreferrer" style={{ color: "#0a66c2" }} aria-label="LinkedIn">
-                  <LinkedInIcon />
-                </a>
-              </footer>
-            </blockquote>
-          </div>
-        )}
-
-        {/* Project links */}
-        <div style={{ marginTop: "3rem", display: "flex", gap: "1rem", flexWrap: "wrap" }}>
-          {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="btn-primary">
-              {cs.liveLink} ↗
-            </a>
-          )}
-          {project.githubUrl && (
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer" className="btn-ghost">
-              {cs.githubLink}
-            </a>
-          )}
+              &ldquo;{testi.quote}&rdquo;
+            </p>
+            <footer style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-end" }}>
+              <div>
+                <p
+                  style={{
+                    fontFamily: "var(--font-display)",
+                    fontWeight: 800,
+                    fontSize: "0.92rem",
+                    color: "var(--fg)",
+                    marginBottom: "0.2rem",
+                  }}
+                >
+                  {testi.name}
+                </p>
+                <p
+                  style={{
+                    color: "rgba(242, 237, 230, 0.45)",
+                    fontSize: "0.75rem",
+                    fontFamily: "var(--font-mono)",
+                    margin: 0,
+                  }}
+                >
+                  {testi.role}
+                </p>
+              </div>
+              <a
+                href={testi.linkedin}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--lime)", textDecoration: "none" }}
+                aria-label="LinkedIn"
+              >
+                <LinkedInIcon />
+              </a>
+            </footer>
+          </blockquote>
         </div>
-      </article>
+      )}
+
+      {/* Enlaces de Acción */}
+      <div style={{ marginTop: "3.5rem", display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
+        {project.liveUrl && (
+          <a
+            href={project.liveUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn-fill"
+            style={{
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              padding: "0.75rem 1.4rem",
+              fontSize: "0.8rem",
+            }}
+          >
+            <span>{cs.liveLink}</span>
+            <span>↗</span>
+          </a>
+        )}
+        {project.githubUrl && (
+          <a
+            href={project.githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn"
+            style={{
+              textDecoration: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "0.4rem",
+              padding: "0.75rem 1.4rem",
+              fontSize: "0.8rem",
+            }}
+          >
+            <span>{cs.githubLink}</span>
+            <span>↗</span>
+          </a>
+        )}
+      </div>
 
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-    </div>
-  );
-}
-
-function CaseSection({ label, content, accent = false }: { label: string; content: string; accent?: boolean }) {
-  return (
-    <div>
-      <p className="hud-label" style={{ marginBottom: "0.65rem", color: accent ? "var(--accent2)" : "var(--accent)" }}>
-        {label}
-      </p>
-      <p style={{ color: "var(--text-secondary)", lineHeight: 1.8, fontSize: "0.97rem" }}>
-        {content}
-      </p>
-    </div>
+    </CaseStudyContainer>
   );
 }
 

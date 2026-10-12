@@ -7,6 +7,7 @@ export interface Testimonial {
 
 export interface Project {
   slug: string;
+  image: string;
   tech: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -16,6 +17,7 @@ export interface Project {
 export const projects: Project[] = [
   {
     slug: "sistema-orientacion-ureal",
+    image: "/images/projects/sistema-orientacion-ureal.png",
     tech: ["PHP", "MySQL", "JavaScript", "Bootstrap", "HTML5", "CSS3"],
     githubUrl:
       "https://github.com/Rasgrove/Vocational-Orientation-and-Test-System-for-UREAL---Bolivia-",
@@ -23,26 +25,31 @@ export const projects: Project[] = [
   },
   {
     slug: "instrum-la-paz",
+    image: "/images/projects/instrum-la-paz.png",
     tech: ["React", "Framer Motion", "Decap CMS", "Vite", "CSS"],
     liveUrl: "https://instrumlapaz.netlify.app/",
   },
   {
-    slug: "portfolio-anterior",
-    tech: ["HTML5", "CSS3", "JavaScript", "PHP"],
-    liveUrl: "https://yamilalarconportfolio.netlify.app/",
-    githubUrl: "https://github.com/Rasgrove",
-  },
-  {
     slug: "valdivia-asociados",
+    image: "/images/projects/valdivia-asociados.png",
     tech: ["React", "Vite", "CSS", "SEO Técnico", "Decap CMS"],
     liveUrl: "https://valdivia-asociados.netlify.app/",
   },
   {
     slug: "sistema-panaderia",
+    image: "/images/projects/sistema-panaderia.png",
     tech: ["React", "Supabase", "PostgreSQL", "TypeScript"],
   },
   {
+    slug: "portfolio-anterior",
+    image: "/images/projects/portfolio-anterior.png",
+    tech: ["HTML5", "CSS3", "JavaScript", "PHP"],
+    liveUrl: "https://yamilalarconportfolio.netlify.app/",
+    githubUrl: "https://github.com/Rasgrove",
+  },
+  {
     slug: "crm-freelance",
+    image: "/images/projects/crm-freelance.png",
     tech: ["React", "Supabase", "PostgreSQL", "TypeScript", "Tailwind CSS"],
     liveUrl: "https://freelancecrm-ya.netlify.app/",
   },
