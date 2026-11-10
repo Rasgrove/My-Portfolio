@@ -9,7 +9,7 @@ const copy = {
   es: {
     role1: "Full-Stack",
     role2: "Developer",
-    sub: "Yamil Alarcon — Ingeniero de Sistemas, Bolivia. Construyo productos digitales para negocios que necesitan resultados, no excusas.",
+    sub: "Yamil Alarcon — Ingeniero de Sistemas, Bolivia. Construyo productos digitales para negocios pequeños que necesitan resultados.",
     cta: "Hablemos",
     ctaSub: "wa.me/59177258517",
     scroll: "Scroll",
@@ -17,7 +17,7 @@ const copy = {
   en: {
     role1: "Full-Stack",
     role2: "Developer",
-    sub: "Yamil Alarcon — Systems Engineer, Bolivia. I build digital products for businesses that need results, not excuses.",
+    sub: "Yamil Alarcon — Systems Engineer, Bolivia. I build digital products for small businesses that need results.",
     cta: "Let's talk",
     ctaSub: "wa.me/59177258517",
     scroll: "Scroll",
@@ -98,10 +98,10 @@ export default function Hero({ locale }: HeroProps) {
         ref={bgRef}
         style={{
           position: "absolute",
-          top: 0,
-          right: "clamp(-4rem, -2vw, 0rem)",
+          top: "-10px",
+          right: "-35px",
           bottom: 0,
-          width: "clamp(52%, 60%, 68%)",
+          width: "clamp(46%, 52%, 56%)",
           zIndex: 0,
         }}
       >
@@ -144,7 +144,7 @@ export default function Hero({ locale }: HeroProps) {
       />
 
       {/* Overlay inferior: gradiente en la mitad izquierda donde esta el texto */}
-      <div style={{
+      <div className="hero-overlay" style={{
         position: "absolute",
         inset: 0,
         background: "linear-gradient(to right, var(--ink) 22%, rgba(12,11,9,0.7) 45%, transparent 70%)",
@@ -157,15 +157,15 @@ export default function Hero({ locale }: HeroProps) {
         ref={logoBadgeRef}
         style={{
           position: "absolute",
-          top: "clamp(90px, 12vh, 120px)",
-          right: "var(--gutter)",
+          top: "clamp(72px, 9vh, 92px)",
+          right: "clamp(0.75rem, 1.5vw, 1.25rem)",
           zIndex: 4,
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
           justifyContent: "center",
-          gap: "0.65rem",
-          padding: "clamp(1.1rem, 2vw, 1.6rem)",
+          gap: "0.5rem",
+          padding: "clamp(0.85rem, 1.4vw, 1.2rem)",
           background: "rgba(12, 11, 9, 0.72)",
           backdropFilter: "blur(14px)",
           WebkitBackdropFilter: "blur(14px)",
@@ -190,7 +190,7 @@ export default function Hero({ locale }: HeroProps) {
           height={96}
           priority
           style={{
-            width: "clamp(72px, 7vw, 98px)",
+            width: "clamp(58px, 5.5vw, 80px)",
             height: "auto",
             objectFit: "contain",
             filter: "invert(1)", // Todo en negro a blanco puro con alto contraste
@@ -200,7 +200,7 @@ export default function Hero({ locale }: HeroProps) {
         <span
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: "clamp(0.68rem, 0.85vw, 0.8rem)",
+            fontSize: "clamp(0.58rem, 0.7vw, 0.7rem)",
             letterSpacing: "0.24em",
             textTransform: "uppercase",
             color: "var(--lime)",
@@ -257,12 +257,58 @@ export default function Hero({ locale }: HeroProps) {
 
         {/* Subtitulo + CTA — fila inferior */}
         <div className="hero-sub-row">
-          <p
-            className="body-text"
-            style={{ color: "var(--fg-dim)", fontSize: "clamp(0.9rem, 1.1vw, 1.05rem)", maxWidth: "46ch" }}
-          >
-            {t.sub}
-          </p>
+          <div style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
+            <p
+              className="body-text"
+              style={{ color: "var(--fg-dim)", fontSize: "clamp(0.9rem, 1.1vw, 1.05rem)", maxWidth: "46ch" }}
+            >
+              {t.sub}
+            </p>
+            {/* CV Download */}
+            <a
+              href="/cv-yamil-alarcon.pdf"
+              download
+              aria-label={locale === "es" ? "Descargar CV en PDF" : "Download CV PDF"}
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.5rem",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                color: "var(--fg)",
+                textDecoration: "none",
+                border: "1px solid rgba(242,237,230,0.35)",
+                paddingBottom: "0.35rem",
+                paddingTop: "0.35rem",
+                paddingLeft: "0.75rem",
+                paddingRight: "0.75rem",
+                borderRadius: "3px",
+                width: "fit-content",
+                transition: "color 0.2s ease, border-color 0.2s ease, background 0.2s ease",
+              }}
+              onMouseEnter={e => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.color = "var(--lime)";
+                el.style.borderColor = "var(--lime)";
+                el.style.background = "rgba(214,244,73,0.06)";
+              }}
+              onMouseLeave={e => {
+                const el = e.currentTarget as HTMLAnchorElement;
+                el.style.color = "var(--fg)";
+                el.style.borderColor = "rgba(242,237,230,0.35)";
+                el.style.background = "transparent";
+              }}
+            >
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              {locale === "es" ? "Descargar CV" : "Download CV"}
+            </a>
+          </div>
           <a
             href="#contacto"
             className="btn btn-fill"
@@ -300,16 +346,26 @@ export default function Hero({ locale }: HeroProps) {
         }
         @media (min-width: 769px) {
           .hero-word {
-            font-size: clamp(3.8rem, 11.2vw, 11rem) !important;
+            font-size: clamp(3.6rem, 9.5vw, 9rem) !important;
           }
         }
         @media (max-width: 640px) {
           .hero-word {
-            font-size: clamp(1.95rem, 9vw, 2.6rem) !important;
+            font-size: clamp(2.0rem, 9.5vw, 2.8rem) !important;
           }
           .hero-sub-row {
             grid-template-columns: 1fr !important;
             gap: 1.5rem !important;
+          }
+          /* En móvil: solo oscurecer la franja inferior donde está el texto, la cara queda libre */
+          .hero-overlay {
+            background: linear-gradient(
+              to top,
+              var(--ink) 0%,
+              rgba(12,11,9,0.88) 32%,
+              rgba(12,11,9,0.3) 52%,
+              transparent 65%
+            ) !important;
           }
         }
       `}</style>

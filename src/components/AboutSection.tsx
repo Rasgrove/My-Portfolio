@@ -81,6 +81,37 @@ export default function AboutSection({ locale, msgs }: { locale: string; msgs: a
             >
               {t.githubCta} &rarr;
             </a>
+
+            {/* CV Download — botón pill discreto en sección About */}
+            <a
+              href="/cv-yamil-alarcon.pdf"
+              download
+              className="about-cv-btn"
+              style={{
+                display: "inline-flex",
+                alignItems: "center",
+                gap: "0.45rem",
+                marginTop: "1rem",
+                fontFamily: "var(--font-mono)",
+                fontSize: "0.68rem",
+                letterSpacing: "0.14em",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                color: "var(--ink)",
+                border: "1px solid rgba(12,11,9,0.35)",
+                padding: "0.32rem 0.72rem",
+                borderRadius: "3px",
+                width: "fit-content",
+                transition: "border-color 0.2s ease, background 0.2s ease",
+              }}
+            >
+              <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              {locale === "es" ? "Descargar CV" : "Download CV"}
+            </a>
           </div>
 
           {/* Testimonio */}
@@ -129,6 +160,10 @@ export default function AboutSection({ locale, msgs }: { locale: string; msgs: a
           #sobre-mi h2, #about h2 {
             font-size: clamp(1.75rem, 8vw, 2.5rem) !important;
           }
+        }
+        .about-cv-btn:hover {
+          border-color: var(--ink) !important;
+          background: rgba(12,11,9,0.07) !important;
         }
       `}</style>
     </section>

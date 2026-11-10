@@ -25,11 +25,29 @@ export default function SmoothScroll() {
         // Expose for GSAP ScrollTrigger integration
         (window as any).__lenis = lenis;
 
+        // Pause Lenis during pinch-zoom (2+ touch points) to avoid freeze on mobile
+        const onTouchStart = (e: TouchEvent) => {
+          if (e.touches.length >= 2) lenis?.stop();
+        };
+        const onTouchEnd = (e: TouchEvent) => {
+          if (e.touches.length < 2) lenis?.start();
+        };
+        window.addEventListener("touchstart", onTouchStart, { passive: true });
+        window.addEventListener("touchend", onTouchEnd, { passive: true });
+
         const raf = (time: number) => {
           lenis.raf(time);
           rafId = requestAnimationFrame(raf);
         };
         rafId = requestAnimationFrame(raf);
+
+        // Cleanup stored so destroy() can remove listeners
+        const prevDestroy = lenis.destroy.bind(lenis);
+        lenis.destroy = () => {
+          window.removeEventListener("touchstart", onTouchStart);
+          window.removeEventListener("touchend", onTouchEnd);
+          prevDestroy();
+        };
       } catch {
         // Lenis not installed yet — silently skip
       }

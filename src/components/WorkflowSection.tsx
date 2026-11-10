@@ -4,25 +4,59 @@ import { useEffect, useRef } from "react";
 import Image from "next/image";
 
 const stepsEs = [
-  { num: "01", title: "Descubrimiento",  desc: "Entender tus objetivos, audiencia y requisitos." },
-  { num: "02", title: "Planificacion",   desc: "Investigacion y plan estrategico basado en datos." },
-  { num: "03", title: "Wireframe",       desc: "Estructura visual para mapear el recorrido del usuario." },
-  { num: "04", title: "Diseno",          desc: "Estilo visual centrado en tu marca y UX." },
-  { num: "05", title: "Desarrollo",      desc: "Codigo limpio, typesafe y sin deuda tecnica." },
-  { num: "06", title: "Pruebas",         desc: "QA en dispositivos reales, navegadores, rendimiento." },
-  { num: "07", title: "Lanzamiento",     desc: "Deploy, dominio, SSL. Todo configurado." },
-  { num: "08", title: "Soporte",         desc: "Asistencia continua para que tu negocio siga creciendo." },
+  {
+    num: "01",
+    title: "Descubrimiento y Alcance",
+    desc: "Analizo tu negocio, tus objetivos y qué necesitas exactamente. Definimos los detalles del proyecto por escrito o videollamada para evitar malentendidos y asegurar que construiremos justo lo que necesitas.",
+  },
+  {
+    num: "02",
+    title: "Dirección Visual y Estructura",
+    desc: "Definimos la paleta de colores, estructura, funcionalidades, tipografías y el estilo general basándonos en tus ideas. Trazo la estructura básica de las pantallas para organizar la información de forma lógica y orientada a la conversión.",
+  },
+  {
+    num: "03",
+    title: "Desarrollo y Comunicación Constante",
+    desc: "Construyo tu sitio o aplicación web utilizando herramientas de desarrollo acelerado. Esto me permite entregar sistemas funcionales, rápidos y adaptables a celulares en una fracción del tiempo, manteniendo comunicación constante y transparente.",
+  },
+  {
+    num: "04",
+    title: "Pruebas y Despliegue",
+    desc: "Reviso el sistema en diferentes dispositivos para garantizar que todo funcione bien. Incluyo SEO estándar para visibilidad en Google. Finalmente, despliego en servidor o te entrego los archivos listos para que decidas dónde alojarlo.",
+  },
+  {
+    num: "05",
+    title: "Soporte y Evolución",
+    desc: "Al finalizar, te entrego el control total del proyecto. Si necesitas mantenimiento técnico, actualizaciones o mejoras continuas, podemos acordar un plan de soporte mensual. Ofrezco un período gratis de soporte para solucionar bugs.",
+  },
 ];
 
 const stepsEn = [
-  { num: "01", title: "Discovery",    desc: "Understand your goals, audience and requirements." },
-  { num: "02", title: "Planning",     desc: "Research and strategic plan based on data." },
-  { num: "03", title: "Wireframe",    desc: "Visual structure to map the user journey." },
-  { num: "04", title: "Design",       desc: "Visual style centered on your brand and UX." },
-  { num: "05", title: "Development",  desc: "Clean, typesafe code. No technical debt." },
-  { num: "06", title: "Testing",      desc: "QA on real devices, browsers, performance." },
-  { num: "07", title: "Launch",       desc: "Deploy, domain, SSL. Everything configured." },
-  { num: "08", title: "Support",      desc: "Ongoing assistance so your business keeps growing." },
+  {
+    num: "01",
+    title: "Discovery & Scope",
+    desc: "I analyze your business, goals and what you need exactly. We define the project details in writing or via video call to avoid misunderstandings and ensure we build precisely what you need.",
+  },
+  {
+    num: "02",
+    title: "Visual Direction & Structure",
+    desc: "We define the color palette, structure, features, typography and overall style based on your ideas. I outline the basic screen structure to organize information logically and focused on conversion.",
+  },
+  {
+    num: "03",
+    title: "Development & Constant Communication",
+    desc: "I build your website or web application using accelerated development tools. This allows me to deliver functional, fast, mobile-ready systems in a fraction of the time, while maintaining constant and transparent communication.",
+  },
+  {
+    num: "04",
+    title: "Testing & Deployment",
+    desc: "I review the system across different devices to ensure everything works well. I include standard SEO for Google visibility. Finally, I deploy to a server or hand over the ready-to-go files for you to decide where to host.",
+  },
+  {
+    num: "05",
+    title: "Support & Evolution",
+    desc: "Upon completion, I hand you full control of the project. If you need maintenance, updates or ongoing improvements, we can agree on a monthly support plan. I offer a free support period to fix bugs.",
+  },
 ];
 
 export default function WorkflowSection({ locale }: { locale: string }) {

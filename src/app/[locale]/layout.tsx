@@ -116,7 +116,7 @@ export default async function LocaleLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>
+      <body suppressHydrationWarning>
         <a href="#main-content" className="skip-link">
           {locale === "es" ? "Ir al contenido principal" : "Skip to main content"}
         </a>

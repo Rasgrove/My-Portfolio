@@ -85,7 +85,7 @@ export default function ProjectsSection({ locale, msgs }: { locale: string; msgs
         <p
           style={{
             fontFamily: "var(--font-mono)",
-            fontSize: "0.82rem",
+            fontSize: "0.84rem",
             color: "rgba(242,237,230,0.5)",
             letterSpacing: "0.08em",
           }}
@@ -255,10 +255,10 @@ export default function ProjectsSection({ locale, msgs }: { locale: string; msgs
                         key={tech}
                         style={{
                           fontFamily: "var(--font-mono)",
-                          fontSize: "0.65rem",
-                          letterSpacing: "0.14em",
+                          fontSize: "0.78rem",
+                          letterSpacing: "0.12em",
                           textTransform: "uppercase",
-                          color: "rgba(242,237,230,0.35)",
+                          color: "rgba(242,237,230,0.45)",
                         }}
                       >
                         {tech}
