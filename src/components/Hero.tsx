@@ -98,7 +98,7 @@ export default function Hero({ locale }: HeroProps) {
         ref={bgRef}
         style={{
           position: "absolute",
-          top: "-10px",
+          top: "+50px",
           right: "-35px",
           bottom: 0,
           width: "clamp(46%, 52%, 56%)",
@@ -266,7 +266,7 @@ export default function Hero({ locale }: HeroProps) {
             </p>
             {/* CV Download */}
             <a
-              href="/cv-yamil-alarcon.pdf"
+              href={locale === "es" ? "/cv-yamil-alarcon.pdf" : "/cv-yamil-alarcon-english.pdf"}
               download
               aria-label={locale === "es" ? "Descargar CV en PDF" : "Download CV PDF"}
               style={{
